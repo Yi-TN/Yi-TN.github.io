@@ -1,9 +1,14 @@
 ---
 permalink: /about/
 title: "About"
-# gallery:
-#     - url: /assets/images/game_screenshots/achievements.png
-#       image_path: /assets/images/game_screenshots/achievements.png
+gallery:
+    - url: /assets/images/glow/1.jpg
+      image_path: /assets/images/glow/1.jpg
+    - url: /assets/images/glow/2.jpg
+      image_path: /assets/images/glow/2.jpg
+    - url: /assets/images/glow/2.jpg
+      image_path: /assets/images/glow/.jpg
+    
 ---
 
 Thank you for taking the time to read my portfolio!
@@ -25,10 +30,6 @@ In my spare time, I enjoy building my own **game/rendering engines**, exploring 
 
 ![Achievements](/assets/images/game_screenshots/achievements.png){: .align-right}
 
-I have always been passionate about video games since I was a kid, starting from a Sony PSP. After 20 years, I grow huge interest in all kind of games. my favorit genre is CRPG, and Dragon Age series and Pathfinder Pathfinder: Wrath of the Righteous, where i expierence a facinating story. Besides, I also like soul-like games to challenge myself, I have achievemed all achivement in Elden Ring, Dark Souls 3, Sekiro and Bloodborne.  I am also a huge fan of indie games, such as Hades, VA-11 Hall-A, where I eperience how creative the creators are.
-
-While playing games, im deeply attricted to how facinating the game worlds are, from realistic world in 3A games like Spider-Man, Cyberpunk 2077, to unique stylish game like Hi-Fi RUSH. I want to participating in developing a cool looking game, a fun game.
-
 I've been passionate about video games ever since I first picked up a *Sony PSP* as a kid. Over the years, that passion has grown into a deep appreciation for all kinds of games and the creativity behind them.
 
 My favorite genre is **CRPGs**, especially the *Dragon Age series* and *Pathfinder: Wrath of the Righteous*, where I experienced some of the most fascinating storytelling in games. I also enjoy Souls-like games for their challenge and design depth, I've accomplishe **all achievements** in *Elden Ring*, *Dark Souls III*, *Sekiro*, and *Bloodborne*.
@@ -36,3 +37,12 @@ My favorite genre is **CRPGs**, especially the *Dragon Age series* and *Pathfind
 I'm also a huge fan of **indie games**, such as *Hades* and *Slay the Spire*, which constantly inspire me with their creativity and unique artistic vision.
 
 While playing, I'm always captivated by how these games bring worlds to life — from the realistic, immersive cities of *Spider-Man* and *Cyberpunk 2077* to the stylized, rhythmic energy of *Hi-Fi RUSH*. These experiences motivate me to one day contribute to the creation of games that are both visually stunning and deeply engaging, games that leave players with the same sense of wonder that first drew me into gaming.
+
+
+## My Personal Life
+
+Outside of video games, I also enjoy drawing — in fact, I created all the artwork for my game *Fuuka Student Council*!
+
+I also have a cat, Glow, a cuddly companion who loves to sit by my side while I’m working at the computer.
+
+{% include gallery %}

@@ -113,3 +113,6 @@ tag_archive:
 about_page:
   type: liquid
   path: /about/
+  author_profile: true
+  classes: wide
+  toc: true
