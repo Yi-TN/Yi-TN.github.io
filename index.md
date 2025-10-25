@@ -7,12 +7,11 @@ author_profile: false
 title: "Home"
 permalink: / 
 classes: wide
----
 
 header:
   overlay_color: "#000"
   overlay_filter: "0.7"
-  overlay_image: /asstets/images/vrez/1.png
+  overlay_image: /assets/images/vrez/1.png
   actions:
     - label: "About Me"
       url: /about/
@@ -24,3 +23,12 @@ title: "Yuzhe Yi"
 <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" width="150" style="border-radius: 50%; margin-bottom: 1rem;">
 excerpt: "Hi, I'm Yuzhe Yi, a **Game Graphics/Rendering Engineer**. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
 
+---
+
+<p align="center">
+  <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" width="160" style="border-radius:50%;margin-bottom:0.75rem;">
+</p>
+
+<p align="center"><b>Game Graphics / Rendering Engineer</b></p>
+
+{% include feature_row %}
