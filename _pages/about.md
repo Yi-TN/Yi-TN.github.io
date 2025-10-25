@@ -6,7 +6,7 @@ title: "About"
 #       image_path: /assets/images/game_screenshots/achievements.png
 ---
 
-Thank you for taking your time to read my portfolio!
+Thank you for taking the time to read my portfolio!
 
 ## About Me
 
@@ -14,16 +14,16 @@ Hi, I'm **Yuzhe Yi**, a **Game Graphics/Rendering Engineer**.
 
 I graduated from the *University of Calgary* in June 2021 with a **B.Sc. in Computer Science (with Distinction)**. During my undergrad study, I took high level courses in *Computer Graphics*, *Rendering*, *Animation,* and *Games Programming*, where where I developed a deep passion for *computer graphics* and *video games*.
 
-After graduation, I joined **CoreAVI**(now **Lynx Software Technologies**), a company specializing in *safety-critical graphics solutions and embedded GPUs*, as a **Software Verification Engineer**. My work involved implementing high-level and unit tests for our **Vulkan SC** library and contributing to requirements development for **OpenGL SC** and **EGL**. Through this experience, I gained a strong understanding of **modern graphics APIs**.
+After graduation, I joined **CoreAVI**, a company specializing in *safety-critical graphics solutions and embedded GPUs*, as a **Software Verification Engineer**. My work involved implementing high-level and unit tests for our **Vulkan SC** library and contributing to requirements development for **OpenGL SC** and **EGL**. Through this experience, I gained a strong understanding of *modern graphics APIs*.
 
-Currently, I am pursuing a **Master's degree** in **Computing Science** at *University of Alberta*, specializing in **Multimedia**. My research and coursework cover *VR/AR*, *image processing*, *AI*, etc., and of course *computer graphics*.
+Currently, I am pursuing a **Master's degree** in **Computing Science** at *University of Alberta*, specializing in *Multimedia*. My research and coursework cover *VR/AR*, *image processing*, *AI*, etc., and of course *computer graphics*.
 
-In my spare time, I enjoy building my own **game/rendering engines**, exploring everything from **traditional rasterization pipelines** to **real-time ray tracing**. I also develop *games* and *plugins* with **Unity** and **Unreal Engine 5**, combining my technical and creative interests to push the boundaries between art and engineering.
+In my spare time, I enjoy building my own **game/rendering engines**, exploring everything from *traditional rasterization pipelines* to *real-time ray tracing*. I also develop *games* and *plugins* with **Unity** and **Unreal Engine 5**, combining my technical and creative interests to push the boundaries between art and engineering.
 
 
 ## My Game Journey
 
-![Achievements](assets//assets/images/game_screenshots/achievements.png){: .align-right}
+![Achievements](/assets//assets/images/game_screenshots/achievements.png){: .align-right}
 
 I have always been passionate about video games since I was a kid, starting from a Sony PSP. After 20 years, I grow huge interest in all kind of games. my favorit genre is CRPG, and Dragon Age series and Pathfinder Pathfinder: Wrath of the Righteous, where i expierence a facinating story. Besides, I also like soul-like games to challenge myself, I have achievemed all achivement in Elden Ring, Dark Souls 3, Sekiro and Bloodborne.  I am also a huge fan of indie games, such as Hades, VA-11 Hall-A, where I eperience how creative the creators are.
 
