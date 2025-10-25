@@ -1,37 +1,17 @@
---- #Front matter is required for Jekyll to process this file ---
-/* -------------------------------------------------------------------
-   Import Minimal Mistakes core styles
-------------------------------------------------------------------- */
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin first
-@import "minimal-mistakes"; // theme core
+--- ---
+/* Import Minimal Mistakes */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
 
-
-/* -------------------------------------------------------------------
-   Custom overrides — add your own styles below
-------------------------------------------------------------------- */
-
-/* Reduce overall font size slightly (optional) */
-body {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Centered circular avatar for splash header */
 .hero-avatar {
     width: 90px;
-    /* size of the avatar */
     height: 90px;
     border-radius: 50%;
-    /* circular shape */
     object-fit: cover;
-    /* prevent stretching */
     display: block;
     margin: 0 auto 0.75rem;
-    /* center + spacing below */
     border: 2px solid rgba(255, 255, 255, 0.8);
-    /* subtle white border */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    /* soft drop shadow */
 }
 
 .page__hero--overlay .page__title {
