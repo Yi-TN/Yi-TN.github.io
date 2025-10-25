@@ -6,8 +6,8 @@ gallery:
       image_path: /assets/images/glow/1.jpg
     - url: /assets/images/glow/2.jpg
       image_path: /assets/images/glow/2.jpg
-    - url: /assets/images/glow/2.jpg
-      image_path: /assets/images/glow/.jpg
+    - url: /assets/images/glow/3.jpg
+      image_path: /assets/images/glow/3.jpg
     
 ---
 

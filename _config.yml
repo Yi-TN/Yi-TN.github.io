@@ -102,6 +102,12 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _about
+  - scope:
+      path: "pages/about.md"
+      author_profile: true
+      classes: wide
+      toc: true
 
 category_archive:
   type: liquid
@@ -110,9 +116,4 @@ tag_archive:
   type: liquid
   path: /tags/
 
-about_page:
-  type: liquid
-  path: /about/
-  author_profile: true
-  classes: wide
-  toc: true
+
