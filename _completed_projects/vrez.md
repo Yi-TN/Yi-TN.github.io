@@ -1,88 +1,90 @@
 ---
-layout: single
+layout: single          # use single so TOC is available
 author_profile: false
 toc: true
-
-title: "Vrez Renderer"
-excerpt: "A **Vulkan** Real-Time Renderer, with **Physical Based Rendering**, **Image Based Lighting**,**Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
 classes: wide
+
+title: "VRez Renderer"
+excerpt: "A **Vulkan** real-time renderer with **Physically Based Rendering**, **Image-Based Lighting**, **Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
 
 header:
   overlay_color: "#000"
-  overlay_filter: "0.7"
+  overlay_filter: 0.7
   overlay_image: /assets/images/vrez/1.png
   actions:
     - label: "GitHub"
       url: "https://github.com/KoS-Y1/VRez"
   caption: "Screenshot of my project VRez"
 
+# Optional info block (not a built-in MM sidebar component—just data you can render manually if you want)
 sidebar:
-    - title: "Type"
-      text: "3D Real-time Renderer"
-    - title: "Programming Language"
-      text: "C++"
-    - title: "Highlight"
-      text: "Vulkan renderer; Deferred & forward rendering pipelines; Physically Based Rendering; Image Based Lighting; Shadow Map; FXAA"
-    - title: "Team"
-      text: "Solo"
-    - title: "Work Period"
-      text: " May 2025 - Sep 2025"
-    
+  - title: "Type"
+    text: "3D Real-time Renderer"
+  - title: "Programming Language"
+    text: "C++"
+  - title: "Highlight"
+    text: "Vulkan renderer; deferred & forward pipelines; PBR; IBL; shadow map; FXAA"
+  - title: "Team"
+    text: "Solo"
+  - title: "Work Period"
+    text: "May 2025 – Sep 2025"
+
 screenshots:
-    - url: /assets/images/vrez/1.png
-      image_path: /assets/images/vrez/1.png
-    - url: /assets/images/vrez/2.png
-      image_path: /assets/images/vrez/2.png
-    - url: /assets/images/vrez/3.png
-      image_path: /assets/images/vrez/3.png    
-    - url: /assets/images/vrez/4.png
-      image_path: /assets/images/vrez/4.png
+  - url: /assets/images/vrez/1.png
+    image_path: /assets/images/vrez/1.png
+  - url: /assets/images/vrez/2.png
+    image_path: /assets/images/vrez/2.png
+  - url: /assets/images/vrez/3.png
+    image_path: /assets/images/vrez/3.png
+  - url: /assets/images/vrez/4.png
+    image_path: /assets/images/vrez/4.png
 
 rendering_feature:
-    - url: /assets/images/vrez/shadowmap.png
-      image_path: /assets/images/vrez/shadowmap.png
-      title: "Shodow Map"
-    - url: /assets/images/vrez/position_metallic.png
-      image_path: /assets/images/vrez/position_metallic.png
-      title: "World Postion & Metallic"
-    - url: /assets/images/vrez/normal_roughness.png
-      image_path: /assets/images/vrez/normal_roughness.png  
-      title: "Normal & Roughness"  
-    - url: /assets/images/vrez/albedo_ao.png
-      image_path: /assets/images/vrez/albedo_ao.png
-      title: "Albedo & Ambient Occulsion"
-    - url: /assets/images/vrez/emissive.png
-      image_path: /assets/images/vrez/emissive.png
-      title: "Emissive"
-    - url: /assets/images/vrez/depth.png
-      image_path: /assets/images/vrez/depth.png
-      title: "Depth Buffer"
-    - url: /assets/images/vrez/pbr.png
-      image_path: /assets/images/vrez/pbr.png
-      title: "PBR in Deferred Pass"
-    - url: /assets/images/vrez/forward_pbr.png
-      image_path: /assets/images/vrez/forward_pbr.png
-      title: "PBR in Forward Pass"     
-    - url: /assets/images/vrez/forward_depth.png
-      image_path: /assets/images/vrez/forward_depth.png
-      title: "Depth Buffer(Forward Pass)"   
-    - url: /assets/images/vrez/skybox.png
-      image_path: /assets/images/vrez/skybox.png
-      title: "Skybox"       
-    - url: /assets/images/vrez/fxaa.png
-      image_path: /assets/images/vrez/fxaa.png
-      title: "FXAA On vs Off"         
-    - url: /assets/images/vrez/ui.png
-      image_path: /assets/images/vrez/ui.png
-
+  - url: /assets/images/vrez/shadowmap.png
+    image_path: /assets/images/vrez/shadowmap.png
+    title: "Shadow Map"
+  - url: /assets/images/vrez/position_metallic.png
+    image_path: /assets/images/vrez/position_metallic.png
+    title: "World Position & Metallic"
+  - url: /assets/images/vrez/normal_roughness.png
+    image_path: /assets/images/vrez/normal_roughness.png
+    title: "Normal & Roughness"
+  - url: /assets/images/vrez/albedo_ao.png
+    image_path: /assets/images/vrez/albedo_ao.png
+    title: "Albedo & Ambient Occlusion"
+  - url: /assets/images/vrez/emissive.png
+    image_path: /assets/images/vrez/emissive.png
+    title: "Emissive"
+  - url: /assets/images/vrez/depth.png
+    image_path: /assets/images/vrez/depth.png
+    title: "Depth Buffer"
+  - url: /assets/images/vrez/pbr.png
+    image_path: /assets/images/vrez/pbr.png
+    title: "PBR in Deferred Pass"
+  - url: /assets/images/vrez/forward_pbr.png
+    image_path: /assets/images/vrez/forward_pbr.png
+    title: "PBR in Forward Pass"
+  - url: /assets/images/vrez/forward_depth.png
+    image_path: /assets/images/vrez/forward_depth.png
+    title: "Depth Buffer (Forward)"
+  - url: /assets/images/vrez/skybox.png
+    image_path: /assets/images/vrez/skybox.png
+    title: "Skybox"
+  - url: /assets/images/vrez/fxaa.png
+    image_path: /assets/images/vrez/fxaa.png
+    title: "FXAA On vs Off"
+  - url: /assets/images/vrez/ui.png
+    image_path: /assets/images/vrez/ui.png
+    title: "UI"
 ---
+
 {% include feature_row %}
 
 ## Screenshots
 
 Here are some screenshots.
 
-{% include gallery id="screenshots" caption= "Screenshots of the app." %}
+{% include gallery id="screenshots" caption="Screenshots of the app." %}
 
 ## Workflow
 
@@ -111,8 +113,8 @@ Very basic deferred & forward pipeline.
     + FXAA
 + ** UI Pass**
     + ImGui UI
-
-{% include gallery id="rendering_feature" caption= "Graphics Pipeline" %}
+    
+{% include gallery id="rendering_feature" caption="Graphics Pipeline" %}
 
 ### Based Rendering & Image Based Lighting
 
