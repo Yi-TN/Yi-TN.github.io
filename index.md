@@ -35,6 +35,12 @@ completed_row:
     url: "/completed_projects/vrez"
     btn_label: "Read More"
     btn_class: "btn--success"
+  - image_path: /assets/images/maihime/cover.png
+    title: "Fuuka Student Council (2025)"
+    excerpt: "An idle fan game inspired by Mai-HiME."
+    url: "/completed_projects/maihime"
+    btn_label: "Read More"
+    btn_class: "btn--success"
 ---
 
 {% include feature_row %}
