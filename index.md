@@ -15,19 +15,15 @@ header:
   actions:
     - label: "About Me"
       url: /about/
-    # - label: "Resume"
-    #   url:
+    - label: "Resume"
+      url:
   caption: "Screenshot of my project VRez"
 
-# <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" width="150" style="border-radius: 50%; margin-bottom: 1rem;">
+{% if site.author.avatar %}
+  <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="hero-avatar">
+{% endif %}
 excerpt: "Hi, I'm Yuzhe Yi, a **Game Graphics/Rendering Engineer**. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
 
 ---
-
-<p align="center">
-  <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" width="160" style="border-radius:50%;margin-bottom:0.75rem;">
-</p>
-
-<p align="center"><b>Game Graphics / Rendering Engineer</b></p>
 
 {% include feature_row %}
