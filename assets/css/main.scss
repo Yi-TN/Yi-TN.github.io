@@ -1,8 +1,12 @@
---- ---
-/* Import Minimal Mistakes */
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
-@import "minimal-mistakes";
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
 
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
 .hero-avatar {
     width: 90px;
     height: 90px;
