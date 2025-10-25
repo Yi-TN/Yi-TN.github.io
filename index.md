@@ -6,7 +6,7 @@ layout: splash
 author_profile: false
 title: '<img src="/assets/images/bio-photo.jpg"
              alt="Yuzhe Yi"
-             style="width:64px;height:64px;border-radius:50%;
+             style="width:96px;height:96px;border-radius:50%;
                     object-fit:cover;vertical-align:middle;margin-right:12px;
                     border:2px solid rgba(255,255,255,.85);
                     box-shadow:0 2px 6px rgba(0,0,0,.25);" />
