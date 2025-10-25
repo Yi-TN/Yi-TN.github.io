@@ -4,14 +4,13 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: splash
 author_profile: false
-title: |
-  <img src="/assets/images/bio-photo.jpg"
+title: '<img src="/assets/images/bio-photo.jpg"
        alt="Yuzhe Yi"
        style="width:90px;height:90px;border-radius:50%;
               object-fit:cover;display:block;margin-bottom:.75rem;
               border:2px solid rgba(255,255,255,.8);
               box-shadow:0 2px 6px rgba(0,0,0,.25);" />
-  Yuzhe Yi
+        Yuzhe Yi'
 permalink: / 
 classes: wide
 
