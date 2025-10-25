@@ -97,6 +97,15 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _completed_projects
+  - scope
+      path: "_pages/completed_projects.md"
+      type: pages
+    values:
+      layout: collection
+      entries_layout: grid
+      classes: wide
+      author_profile: true
   # _about
   - scope:
       path: "_pages/about.md"
