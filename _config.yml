@@ -98,7 +98,7 @@ defaults:
       layout: single
       author_profile: true
   # _completed_projects
-  - scope
+  - scope:
       path: "_completed_projects"
       type: completed_projects
     values:
