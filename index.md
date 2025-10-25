@@ -20,7 +20,12 @@ header:
   caption: "Screenshot of my project VRez"
 
 excerpt: |
-  <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" class="hero-avatar">
+   <img src="/assets/images/bio-photo.jpg"
+       alt="Yuzhe Yi"
+       style="width:90px;height:90px;border-radius:50%;
+              object-fit:cover;display:block;margin-bottom:.75rem;
+              border:2px solid rgba(255,255,255,.8);
+              box-shadow:0 2px 6px rgba(0,0,0,.25);" />
   Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm currently pursuing my Master's degree in Computing Science at University of Alberta.
 
 
