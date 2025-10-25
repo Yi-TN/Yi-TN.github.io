@@ -3,11 +3,12 @@ layout: single          # use single so TOC is available
 author_profile: false
 toc: true
 classes: wide
-
+permalink: /completed_projects/vrez/
 title: "VRez Renderer"
 excerpt: "A **Vulkan** real-time renderer with **Physically Based Rendering**, **Image-Based Lighting**, **Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
 
 header:
+  teaser: /assets/images/vrez/2.png 
   overlay_color: "#000"
   overlay_filter: 0.7
   overlay_image: /assets/images/vrez/1.png
@@ -113,7 +114,7 @@ Very basic deferred & forward pipeline.
     + FXAA
 + ** UI Pass**
     + ImGui UI
-    
+
 {% include gallery id="rendering_feature" caption="Graphics Pipeline" %}
 
 ### Based Rendering & Image Based Lighting
