@@ -23,7 +23,7 @@ In my spare time, I enjoy building my own **game/rendering engines**, exploring 
 
 ## My Game Journey
 
-![Achievements](/assets//assets/images/game_screenshots/achievements.png){: .align-right}
+![Achievements](/assets/images/game_screenshots/achievements.png){: .align-right}
 
 I have always been passionate about video games since I was a kid, starting from a Sony PSP. After 20 years, I grow huge interest in all kind of games. my favorit genre is CRPG, and Dragon Age series and Pathfinder Pathfinder: Wrath of the Righteous, where i expierence a facinating story. Besides, I also like soul-like games to challenge myself, I have achievemed all achivement in Elden Ring, Dark Souls 3, Sekiro and Bloodborne.  I am also a huge fan of indie games, such as Hades, VA-11 Hall-A, where I eperience how creative the creators are.
 
