@@ -76,6 +76,7 @@ rendering_feature:
       image_path: /assets/images/vrez/ui.png
 
 ---
+{% include feature_row %}
 
 ## Screenshots
 
