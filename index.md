@@ -32,7 +32,7 @@ completed_row:
   - image_path: /assets/images/vrez/2.png
     title: "VRez Renderer (2025)"
     excerpt: "A **Vulkan** Real-Time Renderer, with **Physical Based Rendering**, **Image Based Lighting**,**Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
-    url: ""
+    url: "/completed_projects/vrez.md"
     btn_label: "Read More"
     btn_class: "btn--success"
 ---

@@ -2,7 +2,7 @@ main:
   - title: "Home"
     url: /
   - title: "Completed Projects"
-    url: /compeleted/
+    url: /completed/
   - title: "In Progress"
     url: /inprogress/
   - title: "About Me"
