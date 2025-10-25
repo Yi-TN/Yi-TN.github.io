@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "Yuzhe Yi"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Hi, I'm Yuzhe Yi, a Game Graphics/Rendering Engineer. I'm currently pursuing my Master's degree in Computing Science at the University of Alberta."
+  bio    : "Hi, I'm Yuzhe Yi, a Game Graphics/Rendering Engineer. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -90,7 +90,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true

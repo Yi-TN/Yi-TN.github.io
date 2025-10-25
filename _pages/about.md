@@ -1,6 +1,6 @@
 ---
 permalink: /about/
-title: "About"
+title: "About Me"
 gallery:
     - url: /assets/images/glow/1.jpg
       image_path: /assets/images/glow/1.jpg
@@ -13,7 +13,7 @@ gallery:
 
 Thank you for taking the time to read my portfolio!
 
-## About Me
+## 
 
 Hi, I'm **Yuzhe Yi**, a **Game Graphics/Rendering Engineer**.
 
@@ -32,11 +32,12 @@ I've been passionate about video games ever since I first picked up a *Sony PSP*
 
 My favorite genre is **CRPGs**, especially the *Dragon Age series* and *Pathfinder: Wrath of the Righteous*, where I experienced some of the most fascinating storytelling in games. I also enjoy Souls-like games for their challenge and design depth, I've accomplishe **all achievements** in *Elden Ring*, *Dark Souls III*, *Sekiro*, and *Bloodborne*.
 
+![Achievements](/assets/images/game_screenshots/achievements.png){: .align-right}
+
 I'm also a huge fan of **indie games**, such as *Hades* and *Slay the Spire*, which constantly inspire me with their creativity and unique artistic vision.
 
 While playing, I'm always captivated by how these games bring worlds to life — from the realistic, immersive cities of *Spider-Man* and *Cyberpunk 2077* to the stylized, rhythmic energy of *Hi-Fi RUSH*. These experiences motivate me to one day contribute to the creation of games that are both visually stunning and deeply engaging, games that leave players with the same sense of wonder that first drew me into gaming.
 
-![Achievements](/assets/images/game_screenshots/achievements.png){: .align-right}
 
 ## My Personal Life
 
