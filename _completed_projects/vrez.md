@@ -1,5 +1,5 @@
 ---
-layout: splash
+layout: single
 author_profile: false
 toc: true
 
@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/vrez/1.png
   actions:
     - label: "GitHub"
-      url: "https://github.com/KoS-Y1/VRez
+      url: "https://github.com/KoS-Y1/VRez"
   caption: "Screenshot of my project VRez"
 
 sidebar:
@@ -22,7 +22,7 @@ sidebar:
     - title: "Programming Language"
       text: "C++"
     - title: "Highlight"
-      text: "Vulkan renderer; Deferred & forward rendering pipelines; Physically Based Rendering; Image Based Lighting; Shadow Map; FXAA
+      text: "Vulkan renderer; Deferred & forward rendering pipelines; Physically Based Rendering; Image Based Lighting; Shadow Map; FXAA"
     - title: "Team"
       text: "Solo"
     - title: "Work Period"
