@@ -20,7 +20,7 @@ header:
   caption: "Screenshot of my project VRez"
 
 excerpt: |
-   <img src="/assets/images/bio-photo.jpg"
+  <img src="/assets/images/bio-photo.jpg"
        alt="Yuzhe Yi"
        style="width:90px;height:90px;border-radius:50%;
               object-fit:cover;display:block;margin-bottom:.75rem;
