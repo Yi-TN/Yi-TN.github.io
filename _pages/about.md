@@ -3,11 +3,8 @@ permalink: /about/
 title: "About Me"
 layout: single
 author_profile: true
-classes: about-lefttoc
+classes: wide
 toc: true
-toc_sticky: true
-toc_icon: "list"
-toc_position: left
 gallery:
     - url: /assets/images/glow/1.jpg
       image_path: /assets/images/glow/1.jpg
