@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Hi, I'm Yuzhe Yi, a Game Graphics/Rendering Engineer. Welcome to my personal page!
 github_username: KoS-Y1
 minimal_mistakes_skin: mint
-search: true
+search: false
 
 # Build settings
 markdown: kramdown
@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "Yuzhe Yi"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Hi, I'm Yuzhe Yi, a Game Graphics/Rendering Engineer. Currently I'm a master student at University of Calgary, majoring in Computer Science."
+  bio    : "Hi, I'm Yuzhe Yi, a Game Graphics/Rendering Engineer. I'm currently pursuing my Master's degree in Computing Science at the University of Alberta."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -65,6 +65,10 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/yuzhe-yi-b1068419b/"
+    - label: "itch.io"
+      icon: "fab fa-fw fa-itch-io"
+      url: "https://rpt-knight.itch.io/"
+  
 
 footer:
   links:
@@ -74,6 +78,10 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/yuzhe-yi-b1068419b/"
+    - label: "itch.io"
+      icon: "fab fa-fw fa-itch-io"
+      url: "https://rpt-knight.itch.io/"
+  
 
 defaults:
   # _posts
