@@ -99,13 +99,11 @@ defaults:
       author_profile: true
   # _completed_projects
   - scope
-      path: "_pages/completed.md"
-      type: pages
+      path: "_completed_projects"
+      type: completed_projects
     values:
-      layout: collection
-      entries_layout: grid
+      layout: single
       classes: wide
-      author_profile: true
   # _about
   - scope:
       path: "_pages/about.md"
@@ -123,4 +121,7 @@ tag_archive:
   type: liquid
   path: /tags/
 
-
+collections:
+  completed_projects:
+    output: true
+    permalink: /:collection/:title/
