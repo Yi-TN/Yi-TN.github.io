@@ -19,7 +19,7 @@ header:
     #   url:
   caption: "Screenshot of my project VRez"
 
-<img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" width="150" style="border-radius: 50%; margin-bottom: 1rem;">
+# <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" width="150" style="border-radius: 50%; margin-bottom: 1rem;">
 excerpt: "Hi, I'm Yuzhe Yi, a **Game Graphics/Rendering Engineer**. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
 
 ---
