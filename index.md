@@ -28,7 +28,13 @@ header:
 excerpt: "Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
 
 
-
+completed_row:
+  - image_path: /assets/images/vrez/2.png
+    title: "VRez Renderer (2025)"
+    excerpt: "A **Vulkan** Real-Time Renderer, with **Physical Based Rendering**, **Image Based Lighting**,**Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**.
+    url: ""
+    btn_label: "Read More"
+    btn_class: "btn--success"
 ---
 
 {% include feature_row %}
