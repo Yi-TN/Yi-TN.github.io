@@ -105,6 +105,9 @@ defaults:
   # _about
   - scope:
       path: "pages/about.md"
+      type: pages
+    values:
+      layout: single
       author_profile: true
       classes: wide
       toc: true
