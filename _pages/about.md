@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 classes: wide
 toc: true
-toc_label: "On this page"
 toc_sticky: true
 toc_icon: "list"
 toc_position: left
