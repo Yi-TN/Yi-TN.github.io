@@ -3,7 +3,7 @@ permalink: /about/
 title: "About Me"
 layout: single
 author_profile: true
-classes: wide
+classes: about-lefttoc
 toc: true
 toc_sticky: true
 toc_icon: "list"
