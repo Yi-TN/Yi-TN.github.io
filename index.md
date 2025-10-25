@@ -19,9 +19,11 @@ header:
       url:
   caption: "Screenshot of my project VRez"
 
-excerpt:|
+excerpt: |
   <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" class="hero-avatar">
-  "Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
+  Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm currently pursuing my Master's degree in Computing Science at University of Alberta.
+
+
 
 ---
 
