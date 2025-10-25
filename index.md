@@ -37,4 +37,9 @@ completed_row:
     btn_class: "btn--success"
 ---
 
-{% include feature_row %}
+<h1><center>Completed Projects</center></h1>
+<hr/>
+
+
+{% include feature_row id= "completed_row" %}
+

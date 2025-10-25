@@ -1,0 +1,125 @@
+--- # Front matter is required for Jekyll to process this file ---
+/* -------------------------------------------------------------------
+   Import Minimal Mistakes core styles
+------------------------------------------------------------------- */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin first
+@import "minimal-mistakes"; // theme core
+
+
+/* -------------------------------------------------------------------
+   Custom overrides — your styles below
+------------------------------------------------------------------- */
+
+/* ========== Global typography tweaks ========== */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Slightly larger headings */
+h1,
+.page__title {
+    font-weight: 700;
+}
+
+h2,
+h3 {
+    font-weight: 600;
+}
+
+/* ========== Hero avatar styles ========== */
+.hero-avatar,
+.hero-avatar-inline {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.hero-avatar-inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+    width: 64px;
+    height: 64px;
+}
+
+/* ========== Splash title / text alignment ========== */
+.page__hero--overlay .page__title,
+.page__hero--overlay .page__lead {
+    text-align: left;
+    max-width: 850px;
+}
+
+/* ========== TOC: Move "On this page" to the left ========== */
+.page__inner-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    /* swaps TOC and content sides */
+}
+
+.page__content {
+    flex: 1 1 auto;
+}
+
+.toc {
+    order: -1;
+    /* move TOC before content */
+    margin-right: 2rem;
+    margin-left: 0;
+    width: 220px;
+}
+
+/* Sticky TOC behavior */
+.toc--sticky {
+    position: sticky;
+    top: 100px;
+}
+
+/* TOC label styling */
+.toc__title {
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+/* TOC list spacing */
+.toc__menu ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+}
+
+/* Optional: TOC border to separate from main content */
+.toc {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-right: 1.2rem;
+}
+
+/* ========== Misc page tweaks ========== */
+.page__lead {
+    font-size: 1.1rem;
+}
+
+img {
+    border-radius: 6px;
+}
+
+/* Responsive behavior for narrow screens */
+@media (max-width: 960px) {
+    .page__inner-wrap {
+        flex-direction: column;
+    }
+
+    .toc {
+        order: 0;
+        width: auto;
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+}

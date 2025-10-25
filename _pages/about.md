@@ -1,6 +1,14 @@
 ---
 permalink: /about/
 title: "About Me"
+layout: single
+author_profile: true
+classes: wide
+toc: true
+toc_label: "On this page"
+toc_sticky: true
+toc_icon: "list"
+toc_position: left
 gallery:
     - url: /assets/images/glow/1.jpg
       image_path: /assets/images/glow/1.jpg
