@@ -19,10 +19,9 @@ header:
       url:
   caption: "Screenshot of my project VRez"
 
-{% if site.author.avatar %}
-  <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="hero-avatar">
-{% endif %}
-excerpt: "Hi, I'm Yuzhe Yi, a **Game Graphics/Rendering Engineer**. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
+excerpt:|
+  <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" class="hero-avatar">
+  "Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
 
 ---
 
