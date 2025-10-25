@@ -4,6 +4,10 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: splash
 author_profile: false
+title: "Home"
+permalink: / 
+classes: wide
+---
 
 header:
   overlay_color: "#000"
@@ -20,4 +24,3 @@ title: "Yuzhe Yi"
 <img src="/assets/images/bio-photo.jpg" alt="Yuzhe Yi" width="150" style="border-radius: 50%; margin-bottom: 1rem;">
 excerpt: "Hi, I'm Yuzhe Yi, a **Game Graphics/Rendering Engineer**. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
 
----

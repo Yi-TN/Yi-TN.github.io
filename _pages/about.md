@@ -13,7 +13,7 @@ gallery:
 
 Thank you for taking the time to read my portfolio!
 
-## &nbsp;
+## My Experience
 
 Hi, I'm **Yuzhe Yi**, a **Game Graphics/Rendering Engineer**.
 
