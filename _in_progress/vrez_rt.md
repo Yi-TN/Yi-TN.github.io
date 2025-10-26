@@ -32,7 +32,7 @@ sidebar:
 
 {% include feature_row %}
 
-** This project is still in progress**
+**This project is still in progress**
 {: .notice--success}
 
 ## Workflow
@@ -49,7 +49,7 @@ Here are some improvements compared to [VRez](/completed_projects/vrez/).
 
 Because Vulkan objects must be destroyed manually and in a specific order, I designed a reference-counted wrapper that automatically manages object lifetimes.
 
-```
+```cpp
 template<typename Handle, class Deleter>
 struct VkRcObject {
     std::atomic<uint32_t> m_refCount{1u};
@@ -152,8 +152,7 @@ private:
 
 Since some toolchains (e.g., Clang) don’t support std::jthread, I added a small wrapper for better portability.
 
-```
-
+```cpp
 #pragma once
 
 #include <thread>

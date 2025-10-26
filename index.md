@@ -52,13 +52,13 @@ inprogress_row:
   - image_path: /assets/images/vrez_rt/cover.png
     title: "VRez-RT"
     excerpt: "A **Vulkan** real-time Ray Tracer."
-    url: "/in_progress/vrez_rt"
+    url: "/in_progress/vrez_rt/"
     btn_label: "Read More"
     btn_class: "btn--success"
-  - image_path: /assets/images/maihime/cover.png
-    title: "Fuuka Student Council (2025)"
-    excerpt: "An idle fan game inspired by Mai-HiME."
-    url: "/completed_projects/maihime"
+  - image_path: /assets/images/voxel/cover.png
+    title: "PCG Voxel Editor"
+    excerpt: "A procedurally generated voxel map editor plug-in for **Unreal Engine 5**."
+    url: "/in_progress/voxel/"
     btn_label: "Read More"
     btn_class: "btn--success"
   - image_path: /assets/images/toybox/1.webp

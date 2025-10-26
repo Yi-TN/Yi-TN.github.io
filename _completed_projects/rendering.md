@@ -59,7 +59,7 @@ Instead of post processing edge detection, the program using edge buffer to dete
 
 ![silhouette](/assets/images/rendering/silhouette.png)
 
-```
+```cpp
 //adjacent list
 struct Node {
     unsigned int v;                     //vertex id(index)
@@ -107,7 +107,7 @@ for (int j = 0; j < edgeBuffer.size(); ++j) {
 ### Texture
 Based on [RGB to HSV conversion](http://lolengine.net/blog/2013/07/27/rgb-to-hsv-in-glsl), I implemented shader functions to convert between RGB and HSV color spaces for hue-based color manipulation.
 
-```
+```glsl
 vec3 rgbTohsv(vec3 c)vec3 rgbTohsv(vec3 c)
 {
     vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
