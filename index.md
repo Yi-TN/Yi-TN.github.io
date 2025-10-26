@@ -77,7 +77,7 @@ inprogress_row:
 
 {% include feature_row id= "completed_row" %}
 
-[Explore all my completed works >>>]
+[Explore all my completed works >>>](/_completed_projects/)
 
 {% include feature_row id= "more_completed" %}
 
