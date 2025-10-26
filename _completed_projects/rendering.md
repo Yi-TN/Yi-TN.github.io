@@ -8,10 +8,10 @@ title: "A Rendering Project"
 excerpt: "A Rendering Project featuring  Feature Lines & Attribute Based Mapping"
 
 header:
-  teaser: /assets/images/rendering/cover.jpg
+  teaser: /assets/images/rendering/cover.png
   overlay_color: "#000"
   overlay_filter: 0.7
-  overlay_image: /assets/images/rendering/bg.jpg
+  overlay_image: /assets/images/rendering/bg.png
   actions:
     - label: "GitHub"
       url: "https://github.com/KoS-Y1/RenderingProject"
@@ -31,12 +31,12 @@ sidebar:
     text: "Jan 2021"
 
 gallery:
-  - url: /assets/images/rendering/result.jpg
-    image_path: /assets/images/rendering/result.jpg
-  - url: /assets/images/rendering/bg.jpg
-    image_path: /assets/images/rendering/bg.jpg
-  - url: /assets/images/tesla/result.jpg
-    image_path: /assets/images/tesla/result.jpg
+  - url: /assets/images/rendering/result.png
+    image_path: /assets/images/rendering/result.png
+  - url: /assets/images/rendering/bg.png
+    image_path: /assets/images/rendering/bg.png
+  - url: /assets/images/tesla/result.png
+    image_path: /assets/images/tesla/result.png
 ---
 
 {% include feature_row %}
