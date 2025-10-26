@@ -22,7 +22,7 @@ header:
     - label: "About Me"
       url: /about/
     - label: "Resume"
-      url:
+      url: /resume/
   caption: "Screenshot of my project VRez"
 
 excerpt: "Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm currently pursuing my Master's degree in Computing Science at University of Alberta."
