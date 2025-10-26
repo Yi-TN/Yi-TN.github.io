@@ -41,6 +41,15 @@ completed_row:
     url: "/completed_projects/maihime"
     btn_label: "Read More"
     btn_class: "btn--success"
+
+more_completed:
+  - title: "View more projects"
+    excerpt: "Explore all my completed works."
+    url: "/completed_projects/"
+    btn_label: "More Projects"
+    btn_class: "btn--primary"
+
+
 ---
 
 {% include feature_row %}
