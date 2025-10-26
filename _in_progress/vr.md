@@ -70,7 +70,7 @@ The shader supports both base color and albedo texture inputs, providing flexibi
 Unlike traditional unlit toon shaders (which ignore light direction), my implementation computes shading using the dot product between world normals and the light direction, allowing the toon shading to respond dynamically to lighting conditions.
 
 
-{% include gallery id="screenshots" caption="Screenshots of the toon shader." %}
+{% include gallery id="toon" caption="Screenshots of the toon shader." %}
 
 ### Edge Detection
 I developed a post-processing edge detection shader in HLSL, based on the Scharr Operator.  
