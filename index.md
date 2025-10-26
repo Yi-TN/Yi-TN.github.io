@@ -41,6 +41,13 @@ completed_row:
     url: "/completed_projects/maihime"
     btn_label: "Read More"
     btn_class: "btn--success"
+  - image_path: /assets/images/toybox/2.webp
+    title: "Toy Box (2022)"
+    excerpt: "Toy Box is a cute and playful mod with 500+ cheats, tweaks and quality of life improvements for Pathfinder: WoTR."
+    url: "/completed_projects/toybox"
+    btn_label: "Read More"
+    btn_class: "btn--success"
+
 
 more_completed:
   - title: "View more projects"
