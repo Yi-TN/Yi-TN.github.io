@@ -48,6 +48,25 @@ completed_row:
     btn_label: "Read More"
     btn_class: "btn--success"
 
+inprogress_row:
+  - image_path: /assets/images/vrez/2.png
+    title: "VRez Renderer (2025)"
+    excerpt: "A **Vulkan** Real-Time Renderer, with **Physical Based Rendering**, **Image Based Lighting**,**Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
+    url: "/completed_projects/vrez"
+    btn_label: "Read More"
+    btn_class: "btn--success"
+  - image_path: /assets/images/maihime/cover.png
+    title: "Fuuka Student Council (2025)"
+    excerpt: "An idle fan game inspired by Mai-HiME."
+    url: "/completed_projects/maihime"
+    btn_label: "Read More"
+    btn_class: "btn--success"
+  - image_path: /assets/images/toybox/1.webp
+    title: "Toy Box (2022)"
+    excerpt: "Toy Box is a cute and playful mod with 500+ cheats, tweaks and quality of life improvements for Pathfinder: WoTR."
+    url: "/completed_projects/toybox"
+    btn_label: "Read More"
+    btn_class: "btn--success"
 
 more_completed:
   - title: "View more projects"
@@ -56,6 +75,12 @@ more_completed:
     btn_label: "More Projects"
     btn_class: "btn--primary"
 
+more_inprogress:
+  - title: "View more projects"
+    excerpt: "Explore all my completed works."
+    url: "/completed_projects/"
+    btn_label: "More Projects"
+    btn_class: "btn--primary"
 
 ---
 
@@ -66,3 +91,11 @@ more_completed:
 
 {% include feature_row id= "completed_row" %}
 
+{% include feature_row id= "more_completed" %}
+
+<h1><center>In Progress</center></h1>
+<hr/>
+
+{% include feature_row id= "inprogress_row" %}
+
+{% include feature_row id= "more_inprogress" %}
