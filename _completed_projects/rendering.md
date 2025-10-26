@@ -35,8 +35,8 @@ gallery:
     image_path: /assets/images/rendering/result.png
   - url: /assets/images/rendering/bg.png
     image_path: /assets/images/rendering/bg.png
-  - url: /assets/images/tesla/result.png
-    image_path: /assets/images/tesla/result.png
+  - url: /assets/images/rendering/result.png
+    image_path: /assets/images/rendering/result.png
 ---
 
 {% include feature_row %}

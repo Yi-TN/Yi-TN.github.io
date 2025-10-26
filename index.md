@@ -68,20 +68,6 @@ inprogress_row:
     btn_label: "Read More"
     btn_class: "btn--success"
 
-more_completed:
-  - title: "View more projects"
-    excerpt: "Explore all my completed works."
-    url: "/completed_projects/"
-    btn_label: "More Projects"
-    btn_class: "btn--primary"
-
-more_inprogress:
-  - title: "View more projects"
-    excerpt: "Explore all my completed works."
-    url: "/completed_projects/"
-    btn_label: "More Projects"
-    btn_class: "btn--primary"
-
 ---
 
 {% include feature_row %}
@@ -90,6 +76,8 @@ more_inprogress:
 <hr/>
 
 {% include feature_row id= "completed_row" %}
+
+[Explore all my completed works >>>]
 
 {% include feature_row id= "more_completed" %}
 
