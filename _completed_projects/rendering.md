@@ -139,4 +139,4 @@ The system applies the user-selected base color onto a grayscale texture, then a
 
 ## Gallary  
 In the end, the renderer achieved a pleasing non-photorealistic effect, as shown below:
-![Result](/assets/images/rendering/result.jpg)
+{% include gallery id="gallery" caption="Screenshots of the program." %}

@@ -104,6 +104,13 @@ defaults:
     values:
       layout: single
       classes: wide
+  # _in_progress
+  - scope:
+      path: "_in_progress"
+      type: in_progress
+    values:
+      layout: single
+      classes: wide
   # _about
   - scope:
       path: "_pages/about.md"
@@ -123,5 +130,8 @@ tag_archive:
 
 collections:
   completed_projects:
+    output: true
+    permalink: /:collection/:title/
+  in_progress:
     output: true
     permalink: /:collection/:title/
