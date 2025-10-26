@@ -8,6 +8,7 @@ title: "Tesla Game"
 excerpt: "A 3D driving and combat game built from scratch in C++ using OpenGL and NVIDIA PhysX."
 
 header:
+  teaser: /assets/images/tesla/cover.png
   overlay_color: "#000"
   overlay_filter: 0.7
   overlay_image: /assets/images/tesla/bg.png
@@ -44,7 +45,7 @@ screenshots:
 {% include feature_row %}
 
 **This is one of my early projects.**
-{: .notice--info}
+{: .notice--danger}
 
 Tesla Game was developed as a **university team project**, created entirely from scratch in **C++** using **OpenGL** and **NVIDIA PhysX**.  
 
@@ -58,7 +59,9 @@ We made this game before things went wild...
 
 ## Gameplay
 Tesla Game combines driving, shooting, and item mechanics.  
+
 Players can race to the finish line or eliminate other cars using various weapons and items that alter the course of the match.  
+
 Victory can be achieved either by finishing first or by defeating all opponents.
 
 ## My Responsibilities
