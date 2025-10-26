@@ -5,7 +5,7 @@ toc: true
 classes: wide
 permalink: /in_progress/vrez_rt/
 title: "VRez-RT"
-excerpt: "A **Vulkan** real-time **Ray Tracer**."
+excerpt: "A **Vulkan** real-time Ray Tracer."
 
 header:
   teaser: /assets/images/vrez_rt/cover.png 
@@ -28,108 +28,170 @@ sidebar:
   - title: "Team"
     text: "Solo"
 
+---
 
 {% include feature_row %}
 
 ** This project is still in progress**
 {: .notice--success}
 
-## Screenshots
-
-Here are some screenshots.
-
-{% include gallery id="screenshots" caption="Screenshots of the app." %}
-
 ## Workflow
 
-Here is the high-level workflow of the app:
+Below is a brief workflow (subject to updates).
 
-![workflow](/assets/images/vrez/workflow.png)
+![Workflow](/assets/images/vrez_rt/workflow.png)
 
-## Rendering Features
+## Improvement
 
-The renderer is implemented by Vulkan, with GLSL for shaders.
+Here are some improvements compared to [VRez](/_completed_projects/vrez.md).
 
-### Deferred & Forward Rendering Pipeline
+### Reference-Counted Vulkan Object Management
 
-Very basic deferred & forward pipeline.
-
-+ **Shadow Maps** (Depth Only)
-    + Render *shadow-casting* objects to shadow maps
-+ **Deferred Pass** (GBuffer + Lighting)
-    + Render ever *opaque* object
-    + Render *skybox*
-+ **Forward Pass** 
-    + Share depth buffer with Deferred Pass
-    + Combine deferred buffers and calculate *PBR Lighting*
-    + Render *transparent* objects (But for simple testing, I only used a opaque Castle, and it looks the same as the deferred rendered one)
-+ **Post Processing**
-    + FXAA
-+ ** UI Pass**
-    + ImGui UI
-
-{% include gallery id="rendering_feature" caption="Graphics Pipeline" %}
-
-### Based Rendering & Image Based Lighting
-
-Inspired by [Learn OpenGL](https://learnopengl.com/), I implemented Physically Based Rendering (PBR) and Image-Based Lighting (IBL) to achieve realistic rendering results.
-
-![PBR&IBL](/assets/images/vrez/pbr_result.png)
-
-### Fast Approximate Anti-Aliasing
-
-Based on [NVIDIA FXAA - TIMOTHY LOTTES](https://developer.download.nvidia.com/assets/gamedev/files/sdk/11/FXAA_WhitePaper.pdf), I integrated FXAA (Fast Approximate Anti-Aliasing) into my renderer, achieving a fast and visually pleasing anti-aliasing effect.
-
-## Other Features
-
-### Thread Pool
-
-To improve loading performance, I implemented a thread pool to handle parallelized asset loading.
-This allows multiple assets (such as textures, meshes, and shaders) to load concurrently, reducing startup time and improving responsiveness.
-
-Below is a snippet of the critical part of the worker thread logic:
+Because Vulkan objects must be destroyed manually and in a specific order, I designed a reference-counted wrapper that automatically manages object lifetimes.
 
 ```
+template<typename Handle, class Deleter>
+struct VkRcObject {
+    std::atomic<uint32_t> m_refCount{1u};
+    Handle                m_handle{};
+    Deleter               m_deleter;
 
-void ThreadPool::Worker() {
-    while (true) {
-        std::function<void()> job;
-        {
-            std::unique_lock lock(m_mutex);
-            // Wait for an available task
-            m_cv.wait(lock, [this]() { return !m_tasks.empty() || m_stopped; });
+    VkRcObject(Handle handle, Deleter deleter)
+        : m_handle(handle)
+        , m_deleter(std::move(deleter)) {}
+};
 
-            // Exit when
-            // 1) Thread pool is shutting down and all tasks are finished
-            // 2) Explicitly asked to stop
-            if (m_stopped && m_tasks.empty()) {
-                return;
-            }
+template<typename Handle, class Deleter>
+class VkRc {
+public:
+    VkRc() noexcept = default;
 
-            // Fetch one task
-            job = std::move(m_tasks.front());
-            m_tasks.pop();
+    static VkRc MakeVkRc(Handle handle, Deleter deleter) {
+        if (handle == VK_NULL_HANDLE) {
+            return {};
+        }
+        return VkRc(new VkRcObject<Handle, Deleter>(handle, std::move(deleter)));
+    }
+
+    VkRc(const VkRc &other) noexcept
+        : m_object(other.m_object) {
+        this->IncreaseRef();
+    }
+
+    VkRc(VkRc &&other) noexcept
+        : m_object(other.m_object) {
+        other.m_object = nullptr;
+    }
+
+    VkRc &operator=(const VkRc &other) noexcept {
+        if (this != &other) {
+            other.IncreaseRef();
+            Release();
+            m_object = other.m_object;
+        }
+        return *this;
+    }
+
+    VkRc &operator=(VkRc &&other) noexcept {
+        if (this != &other) {
+            Release();
+            m_object = other.m_object;
+            other.m_object = nullptr;
         }
 
-        job();
+        return *this;
+    }
 
-        m_pendingTasks.fetch_sub(1, std::memory_order::memory_order_acq_rel);
-        if (m_pendingTasks.load(std::memory_order_relaxed) == 0) {
-            m_idleCv.notify_all();
+    ~VkRc() { Release(); }
+
+    [[nodiscard]] const Handle &GetHandle() const noexcept {
+        if (m_object) {
+            return m_object->m_handle;
+        }
+        return {};
+    }
+
+private:
+    VkRcObject<Handle, Deleter> *m_object = nullptr;
+
+    explicit VkRc(VkRcObject<Handle, Deleter> *object) noexcept
+        : m_object(object) {}
+
+    void IncreaseRef() {
+        if (m_object) {
+            ++m_object->m_refCount;
         }
     }
-}
+
+    void DecreaseRef() {
+        if (m_object) {
+            --m_object->m_refCount;
+        }
+    }
+
+    void Release() {
+        if (!m_object) {
+            return;
+        }
+
+        DecreaseRef();
+        if (m_object->m_refCount == 0) {
+            if (m_object->m_handle != VK_NULL_HANDLE) {
+                m_object->m_deleter(m_object->m_handle);
+            }
+            delete m_object;
+        }
+        m_object = nullptr;
+    }
+};
+
 
 ```
 
-### Shader System
+### More Compatible Thread Wrapper
 
-I implemented a runtime GLSL-to-SPIR-V compilation system using [glslang](https://github.com/KhronosGroup/glslang). And I also integrated shader reflection with [SPIRV-Reflect](https://github.com/KhronosGroup/SPIRV-Reflect), allowing the engine to automatically extract descriptor bindings and push constants.
+Since some toolchains (e.g., Clang) don’t support std::jthread, I added a small wrapper for better portability.
 
-## To Improve
+```
 
-During development, I identified several areas for improvement:
-+ The current logging system uses SDL_Log, which could be replaced with a more structured and formatted logging framework.
-+ Vulkan objects currently require manual destruction. This approach is error-prone, and adopting a resource management pattern (such as reference counting or RAII wrappers) would make the system safer and more maintainable.
+#pragma once
 
-I am addressing these issues and exploring improved designs in my next project, VRez-RT.
+#include <thread>
+
+// MSVC
+#if defined(_cpp_lib_jthread) && (__cpp_lib_jthread >= 201911L)
+    using Thread = std::jthread;
+
+// CLANG
+#else
+class Thread {
+public:
+    Thread() noexcept = default;
+    Thread(const Thread&) = delete;
+    Thread& operator=(const Thread&) = delete;
+
+    Thread(Thread&&) = default;
+    Thread& operator=(Thread&&) = default;
+
+    template <class F, class... Args>
+    explicit Thread(F&& f, Args&&... args) : m_thread(std::forward<F>(f), std::forward<Args>(args)...) {}
+
+    ~Thread() {
+        if (m_thread.joinable()) {
+            m_thread.join();
+        }
+    }
+
+
+private:
+    std::thread m_thread;
+};
+#endif
+
+```
+
+### Better Logging
+
+I integrated [spdlog](https://github.com/gabime/spdlog) for structured logs with timestamps and levels, replacing SDL_Log.
+
+![Log](/assets//images/vrez_rt/log.png)

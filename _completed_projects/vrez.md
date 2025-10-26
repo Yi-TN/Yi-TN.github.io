@@ -179,4 +179,4 @@ During development, I identified several areas for improvement:
 + The current logging system uses SDL_Log, which could be replaced with a more structured and formatted logging framework.
 + Vulkan objects currently require manual destruction. This approach is error-prone, and adopting a resource management pattern (such as reference counting or RAII wrappers) would make the system safer and more maintainable.
 
-I am addressing these issues and exploring improved designs in my next project, VRez-RT.
+I am addressing these issues and exploring improved designs in my next project, [VRez-RT](/_in_progress/vrez_rt.md).

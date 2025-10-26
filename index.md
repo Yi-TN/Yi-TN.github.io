@@ -49,10 +49,10 @@ completed_row:
     btn_class: "btn--success"
 
 inprogress_row:
-  - image_path: /assets/images/vrez/2.png
-    title: "VRez Renderer (2025)"
-    excerpt: "A **Vulkan** Real-Time Renderer, with **Physical Based Rendering**, **Image Based Lighting**,**Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
-    url: "/completed_projects/vrez"
+  - image_path: /assets/images/vrez_rt/cover.png
+    title: "VRez-RT"
+    excerpt: "A **Vulkan** real-time Ray Tracer."
+    url: "/inprogress/vrez_rt"
     btn_label: "Read More"
     btn_class: "btn--success"
   - image_path: /assets/images/maihime/cover.png
