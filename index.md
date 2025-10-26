@@ -77,7 +77,7 @@ inprogress_row:
 
 {% include feature_row id= "completed_row" %}
 
-[Explore all my completed works >>>](/_completed_projects/)
+<p><a class="btn btn--primary" href="{{ "/completed_projects/" | completed-archive }}">Explore all completed works &raquo;</a></p>
 
 {% include feature_row id= "more_completed" %}
 

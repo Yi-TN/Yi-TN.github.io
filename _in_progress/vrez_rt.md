@@ -3,32 +3,30 @@ layout: single          # use single so TOC is available
 author_profile: false
 toc: true
 classes: wide
-permalink: /completed_projects/vrez/
-title: "VRez Renderer"
-excerpt: "A **Vulkan** real-time renderer with **Physically Based Rendering**, **Image-Based Lighting**, **Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
+permalink: /in_progress/vrez_rt/
+title: "VRez-RT"
+excerpt: "A **Vulkan** real-time **Ray Tracer**."
 
 header:
-  teaser: /assets/images/vrez/2.png 
+  teaser: /assets/images/vrez_rt/cover.png 
   overlay_color: "#000"
   overlay_filter: 0.7
-  overlay_image: /assets/images/vrez/1.png
-  actions:
-    - label: "GitHub"
-      url: "https://github.com/KoS-Y1/VRez"
-  caption: "Screenshot of my project VRez"
+  overlay_image: /assets/images/vrez_rt/bg.png
+#   actions:
+#     - label: "GitHub"
+#       url: "https://github.com/KoS-Y1/VRez"
+#   caption: "Screenshot of my project VRez"
 
 # Optional info block (not a built-in MM sidebar component—just data you can render manually if you want)
 sidebar:
   - title: "Type"
-    text: "3D Real-time Renderer"
+    text: "3D Real-time Ray Tracer"
   - title: "Programming Language"
     text: "C++"
   - title: "Highlight"
-    text: "Vulkan renderer; deferred & forward pipelines; PBR; IBL; shadow map; FXAA"
+    text: "Vulkan; Ray Tracing"
   - title: "Team"
     text: "Solo"
-  - title: "Work Period"
-    text: "May 2025 – Sep 2025"
 
 screenshots:
   - url: /assets/images/vrez/1.png
