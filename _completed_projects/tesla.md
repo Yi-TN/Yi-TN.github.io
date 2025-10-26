@@ -23,10 +23,10 @@ sidebar:
     text: "3D Driving Game"
   - title: "Programming Language"
     text: "C++"
-  - title: "Libaries for Building Engine"
+  - title: "Engine Libraries"
     text: "OpenGL; PhysX"
   - title: "Genre"
-    text: "Car Driving; Shooting"
+    text: "Racing; Vehicle Combat"
   - title: "Team"
     text: "UCalgary, 5 developers"
   - title: "Work Period"
@@ -49,7 +49,7 @@ screenshots:
 
 Tesla Game was developed as a **university team project**, created entirely from scratch in **C++** using **OpenGL** and **NVIDIA PhysX**.  
 
-Our goal was to design a **fun, fast-paced vehicle combat game** with realistic driving physics, weapon systems, and local multiplayer support.
+Our goal was to design a fun, fast-paced vehicle combat game with realistic driving physics, weapon systems, and local multiplayer support.
 
 We made this game before things went wild...
 
