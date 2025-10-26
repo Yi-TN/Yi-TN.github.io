@@ -31,8 +31,8 @@ sidebar:
     text: "Jan 2021"
 
 gallery:
-  - url: /assets/images/rendering/result.png
-    image_path: /assets/images/rendering/result.png
+  - url: /assets/images/rendering/cover.png
+    image_path: /assets/images/rendering/cover.png
   - url: /assets/images/rendering/bg.png
     image_path: /assets/images/rendering/bg.png
   - url: /assets/images/rendering/result.png

@@ -28,56 +28,11 @@ sidebar:
   - title: "Team"
     text: "Solo"
 
-screenshots:
-  - url: /assets/images/vrez/1.png
-    image_path: /assets/images/vrez/1.png
-  - url: /assets/images/vrez/2.png
-    image_path: /assets/images/vrez/2.png
-  - url: /assets/images/vrez/3.png
-    image_path: /assets/images/vrez/3.png
-  - url: /assets/images/vrez/4.png
-    image_path: /assets/images/vrez/4.png
-
-rendering_feature:
-  - url: /assets/images/vrez/shadowmap.png
-    image_path: /assets/images/vrez/shadowmap.png
-    title: "Shadow Map"
-  - url: /assets/images/vrez/position_metallic.png
-    image_path: /assets/images/vrez/position_metallic.png
-    title: "World Position & Metallic"
-  - url: /assets/images/vrez/normal_roughness.png
-    image_path: /assets/images/vrez/normal_roughness.png
-    title: "Normal & Roughness"
-  - url: /assets/images/vrez/albedo_ao.png
-    image_path: /assets/images/vrez/albedo_ao.png
-    title: "Albedo & Ambient Occlusion"
-  - url: /assets/images/vrez/emissive.png
-    image_path: /assets/images/vrez/emissive.png
-    title: "Emissive"
-  - url: /assets/images/vrez/depth.png
-    image_path: /assets/images/vrez/depth.png
-    title: "Depth Buffer"
-  - url: /assets/images/vrez/pbr.png
-    image_path: /assets/images/vrez/pbr.png
-    title: "PBR in Deferred Pass"
-  - url: /assets/images/vrez/forward_pbr.png
-    image_path: /assets/images/vrez/forward_pbr.png
-    title: "PBR in Forward Pass"
-  - url: /assets/images/vrez/forward_depth.png
-    image_path: /assets/images/vrez/forward_depth.png
-    title: "Depth Buffer (Forward)"
-  - url: /assets/images/vrez/skybox.png
-    image_path: /assets/images/vrez/skybox.png
-    title: "Skybox"
-  - url: /assets/images/vrez/fxaa.png
-    image_path: /assets/images/vrez/fxaa.png
-    title: "FXAA On vs Off"
-  - url: /assets/images/vrez/ui.png
-    image_path: /assets/images/vrez/ui.png
-    title: "UI"
----
 
 {% include feature_row %}
+
+** This project is still in progress**
+{: .notice--success}
 
 ## Screenshots
 
