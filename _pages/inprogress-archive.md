@@ -1,5 +1,5 @@
 ---
-permalink: /inprogress/
+permalink: /in_progress/
 title: "In Progress"
 collection: in_progress
 layout: collection

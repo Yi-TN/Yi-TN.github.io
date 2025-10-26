@@ -52,7 +52,7 @@ inprogress_row:
   - image_path: /assets/images/vrez_rt/cover.png
     title: "VRez-RT"
     excerpt: "A **Vulkan** real-time Ray Tracer."
-    url: "/inprogress/vrez_rt"
+    url: "/in_progress/vrez_rt"
     btn_label: "Read More"
     btn_class: "btn--success"
   - image_path: /assets/images/maihime/cover.png
@@ -85,5 +85,3 @@ inprogress_row:
 <hr/>
 
 {% include feature_row id= "inprogress_row" %}
-
-{% include feature_row id= "more_inprogress" %}

@@ -43,7 +43,7 @@ Below is a brief workflow (subject to updates).
 
 ## Improvement
 
-Here are some improvements compared to [VRez](/_completed_projects/vrez.md).
+Here are some improvements compared to [VRez](/completed_projects/vrez/).
 
 ### Reference-Counted Vulkan Object Management
 

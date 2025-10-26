@@ -4,7 +4,7 @@ main:
   - title: "Completed Projects"
     url: /completed_projects/
   - title: "In Progress"
-    url: /inprogress/
+    url: /in_progress/
   - title: "About Me"
     url: /about/
   - title: "Resume"
