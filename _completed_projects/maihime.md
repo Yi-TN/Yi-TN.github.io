@@ -41,7 +41,6 @@ characters:
 ---
 
 {% include feature_row %}
-
 This game is inspired by the anime **Mai-HiME**, created for the wholesome fan community that continues to cherish and contribute art, fanfics, and passion for the series even after 20 years.
 
 ## Gameplay

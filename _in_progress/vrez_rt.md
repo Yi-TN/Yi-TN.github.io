@@ -31,7 +31,6 @@ sidebar:
 ---
 
 {% include feature_row %}
-
 **This project is still in progress**
 {: .notice--success}
 

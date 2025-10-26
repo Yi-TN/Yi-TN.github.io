@@ -42,7 +42,6 @@ screenshots:
 
 ---
 {% include feature_row %}
-
 **I no longer contribute to the project.**
 {: .notice--info}
 

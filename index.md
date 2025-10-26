@@ -61,10 +61,10 @@ inprogress_row:
     url: "/in_progress/voxel/"
     btn_label: "Read More"
     btn_class: "btn--success"
-  - image_path: /assets/images/toybox/1.webp
-    title: "Toy Box (2022)"
-    excerpt: "Toy Box is a cute and playful mod with 500+ cheats, tweaks and quality of life improvements for Pathfinder: WoTR."
-    url: "/completed_projects/toybox"
+  - image_path: /assets/images/vr/cover.png
+    title: "Fire Safe VR"
+    excerpt: "A Virtual Reality (VR) simulation game designed to teach essential fire safety and evacuation procedures."
+    url: "/in_progress/vr/"
     btn_label: "Read More"
     btn_class: "btn--success"
 
@@ -79,9 +79,10 @@ inprogress_row:
 
 <p><a class="btn btn--primary" href="{{ "/completed_projects/" | completed-archive }}">Explore all completed works &raquo;</a></p>
 
-{% include feature_row id= "more_completed" %}
 
 <h1><center>In Progress</center></h1>
 <hr/>
 
 {% include feature_row id= "inprogress_row" %}
+
+<p><a class="btn btn--primary" href="{{ "/in_progress/" | inprogress-archive }}">Explore all in progress works &raquo;</a></p>

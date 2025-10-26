@@ -43,7 +43,6 @@ screenshots:
 ---
 
 {% include feature_row %}
-
 **This is one of my early projects.**
 {: .notice--danger}
 
