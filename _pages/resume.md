@@ -15,8 +15,8 @@ toc: false
 | **Debugging/Profiling Tools** | RenderDoc, ImGui, Nsight Graphics |
 | **Game Engines** | Unreal Engine 5, Unity |
 | **Art Tools** | Blender, Clip Studio Paint, Photoshop, Aseprite, After Effects, Premiere Pro |
-| **Team Skills** | Git (GitHub Pull Request workflow), Perforce, Agile (Scrum), Jira |
-  **Other Tools** | CMAke, Qt, Visual Studio, Rider, CLion |
+| **Team Skills** | Git (GitHub Pull Request workflow), Agile (Scrum), Jira |
+  **Other Tools** | CMake, Qt, Visual Studio, Rider, CLion |
 
 ## Work Experience
 ### Software Verification Engineer
