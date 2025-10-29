@@ -112,12 +112,12 @@ Very basic deferred & forward pipeline.
     + Render *transparent* objects (But for simple testing, I only used a opaque Castle, and it looks the same as the deferred rendered one)
 + **Post Processing**
     + FXAA
-+ ** UI Pass**
++ **UI Pass**
     + ImGui UI
 
 {% include gallery id="rendering_feature" caption="Graphics Pipeline" %}
 
-### Based Rendering & Image Based Lighting
+### Physical Based Rendering & Image Based Lighting
 
 Inspired by [Learn OpenGL](https://learnopengl.com/), I implemented Physically Based Rendering (PBR) and Image-Based Lighting (IBL) to achieve realistic rendering results.
 
