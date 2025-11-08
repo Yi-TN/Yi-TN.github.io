@@ -51,6 +51,7 @@ toon:
 
 + Designed and led discussion on the core gameplay.
 + Developed the base project architecture in Unity.
++ Integrated VR device input using the **OpenXR plugin**, **XR Interaction Toolkit**, and other XR packages.
 
 ### Graphics Programmer
 
@@ -193,3 +194,13 @@ Used Unity’s Particle System to implement realistic smoke and fire effects for
 These effects are triggered dynamically during the evacuation sequence to increase immersion.
 
 ![Smoke Effect](/assets/images/vr/smoke_effect.gif)
+
+## VR Input System
+
+### Device Setup
+The VR setup supports head tracking for camera movement and hand tracking for controller input using Unity’s XR components and the OpenXR runtime.
+
+### Custom Input Implementation
+Instead of relying on the complex prefabs provided by XR packages, I created a lightweight custom input layer using Unity’s Input System.
+
+This system handles only the essential interactions, such as trigger and grip presses, raycasting, and object interaction—making it more maintainable and easier to extend.
