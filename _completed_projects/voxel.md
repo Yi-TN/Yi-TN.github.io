@@ -3,7 +3,7 @@ layout: single          # use single so TOC is available
 author_profile: false
 toc: true
 classes: wide
-permalink: /in_progress/voxel/
+permalink: /completed_projects/voxel/
 title: "PCG Voxel Editor"
 excerpt: "A procedurally generated voxel map editor plug-in for **Unreal Engine 5**."
 
@@ -12,10 +12,9 @@ header:
   overlay_color: "#000"
   overlay_filter: 0.7
   overlay_image: /assets/images/voxel/bg.png
-#   actions:
-#     - label: "GitHub"
-#       url: "https://github.com/KoS-Y1/VRez"
-#   caption: "Screenshot of my project VRez"
+  actions:
+    - label: "GitHub"
+      url: "https://github.com/KoS-Y1/BlockWorld"
 
 # Optional info block (not a built-in MM sidebar component—just data you can render manually if you want)
 sidebar:
@@ -32,15 +31,10 @@ sidebar:
 
 ---
 
-{% include feature_row %}
-**This project is still in progress**
-{: .notice--success}
  
 ## Motivation & Goals
 
 Inspired by *Minecraft* (of course!), I wanted to design a plug-in that can generate and save small voxel-based block lands based on user-defined parameters.  
-
-These block lands can then be randomly combined to form a large, procedurally generated voxel world.
 
 
 ## Block Land Editor
@@ -161,7 +155,3 @@ The noise texture is then applied as a tint to a specific region (e.g., the gras
 
 
 This produces a cohesive yet varied pixel-art style texture across the block land, enhancing visual richness without repetitive tiling.
-
-### Block World (In Progress)
-
-The next step is to implement the Block World system, which will combine multiple saved block lands into a large, fully procedural world.

@@ -55,12 +55,6 @@ inprogress_row:
     url: "/in_progress/vrez_rt/"
     btn_label: "Read More"
     btn_class: "btn--success"
-  - image_path: /assets/images/voxel/cover.png
-    title: "PCG Voxel Editor"
-    excerpt: "A procedurally generated voxel map editor plug-in for **Unreal Engine 5**."
-    url: "/in_progress/voxel/"
-    btn_label: "Read More"
-    btn_class: "btn--success"
   - image_path: /assets/images/vr/cover.png
     title: "Fire Safe VR"
     excerpt: "A Virtual Reality (VR) simulation game designed to teach essential fire safety and evacuation procedures."
