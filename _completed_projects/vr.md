@@ -3,7 +3,7 @@ layout: single          # use single so TOC is available
 author_profile: false
 toc: true
 classes: wide
-permalink: /in_progress/vr/
+permalink: /completed_projects/vr/
 title: "Fire Safe VR"
 excerpt: "A Virtual Reality (VR) simulation game designed to teach essential fire safety and evacuation procedures."
 
@@ -12,10 +12,10 @@ header:
   overlay_color: "#000"
   overlay_filter: 0.7
   overlay_image: /assets/images/vr/toon.png
-#   actions:
-#     - label: "GitHub"
-#       url: "https://github.com/KoS-Y1/VRez"
-#   caption: "Screenshot of my project VRez"
+  actions:
+    - label: "GitHub"
+      url: "https://github.com/KoS-Y1/VR-Project"
+  caption: "Screenshot of Fire Safe VR"
 
 # Optional info block (not a built-in MM sidebar component—just data you can render manually if you want)
 sidebar:
