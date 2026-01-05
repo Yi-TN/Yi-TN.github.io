@@ -11,7 +11,7 @@ header:
   teaser: /assets/images/lantern/cover.png 
   overlay_color: "#000"
   overlay_filter: 0.7
-  overlay_image: /assets/images/""/cover.png
+  overlay_image: /assets/images/lantern/cover.png
   actions:
     - label: "GitHub"
       url: "https://github.com/KoS-Y1/ProjectLantern"
