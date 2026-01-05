@@ -26,7 +26,7 @@ sidebar:
   - title: "Game Engine"
     text: "Unreal Engine 5"
   - title: "Genre"
-    text: "Advanture"
+    text: "Adventure"
   - title: "Team"
     text: "Solo"
 
