@@ -34,26 +34,27 @@ sidebar:
  
 ## Gameplay
 
-Light the lanterns which lead to the way to the camp. The warm light will protect you from darkness, don't be in dark for too long. follow the lantern to camp and eventually light the campfire for success.
+Light the lanterns that guide the path to the camp. The warm glow protects you from the surrounding darkness, lingering in the dark for too long is dangerous. Follow the path of lanterns, survive the journey, and ultimately light the campfire to succeed.
 
 ## My Work
 
 ### Gameplay
 
-Designed the basic gameplay, implemented game logic with c++ and blueprints.
+Designed the core gameplay systems and implemented game logic using C++ and Unreal Engine Blueprints, including player interaction, progression, and fail conditions.
 
 ### UI
 
-Designed simple UI with UI Widget Blueprint, implemented simple UI animation.
+Designed a clean and minimal user interface using Widget Blueprints, with simple yet effective UI animations to communicate player state and feedback.
 
 ![UI](/assets/images/lantern/ui.png)
 
 ### Graphics & VFX
 
-Designed stylized postprocessing effect with Shader Graph and HLSL. 
+Developed stylized post-processing effects using Unreal Shader Graph and HLSL, enhancing atmosphere and visual clarity.
 
 ![Postprocess](/assets/images/lantern/grayscale.gif)
 
-Implemented particle effect with Niagara.
+Implemented real-time particle effects with Niagara.
+
 
 ![Particle](/assets/images/lantern/particle.png)
