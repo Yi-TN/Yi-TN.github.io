@@ -11,12 +11,12 @@ header:
   teaser: /assets/images/lantern/cover.png 
   overlay_color: "#000"
   overlay_filter: 0.7
-  overlay_image: /assets/images/lantern/cover.png
+  overlay_image: /assets/images/""/cover.png
   actions:
     - label: "GitHub"
       url: "https://github.com/KoS-Y1/ProjectLantern"
     - label: "Itch.io"
-      url: "https://rpt-knight.itch.io/light-your-path
+      url: "https://rpt-knight.itch.io/light-your-path"
   caption: "Screenshot of Light Your Path"
     
 # Optional info block (not a built-in MM sidebar component—just data you can render manually if you want)
