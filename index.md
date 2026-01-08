@@ -57,7 +57,7 @@ inprogress_row:
     btn_class: "btn--success"
 
 posts_row:
-  - image_path: /assets/images/posts/cross_hatching/cover.png
+  - image_path: /assets/images/blogs/cross_hatching/cover.png
     title: "Cross Hatching Line"
     excerpt: "Post-processing cross hatching line shader implemented in UE5."
     url: "/posts/cross_hatching/"
