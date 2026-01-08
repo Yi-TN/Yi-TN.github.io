@@ -83,7 +83,7 @@ posts_row:
 
 <p><a class="btn btn--primary" href="{{ "/in_progress/" | inprogress-archive }}">Explore all in progress works &raquo;</a></p>
 
-<h1><center>posts</center></h1>
+<h1><center>Posts</center></h1>
 <hr/>
 
 
