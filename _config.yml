@@ -111,6 +111,13 @@ defaults:
     values:
       layout: single
       classes: wide
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: single
+      classes: wide
   # _about
   - scope:
       path: "_pages/about.md"

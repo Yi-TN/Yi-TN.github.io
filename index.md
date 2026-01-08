@@ -56,6 +56,13 @@ inprogress_row:
     btn_label: "Read More"
     btn_class: "btn--success"
 
+posts_row
+  - image_path: /assets/images/blogs/cross_hatching/cover.png
+    title: "Post-processing Cross Hatching Line Shader"
+    url: "/posts/cross_hatching/
+    btn_label: "Read More"
+    btn_class: "btn--success"
+
 ---
 
 {% include feature_row %}
@@ -74,3 +81,7 @@ inprogress_row:
 {% include feature_row id= "inprogress_row" %}
 
 <p><a class="btn btn--primary" href="{{ "/in_progress/" | inprogress-archive }}">Explore all in progress works &raquo;</a></p>
+
+{% include feature_row id= "posts_row" %}
+
+<p><a class="btn btn--primary" href="{{ "/posts/" | posts-archive }}">Explore all posts &raquo;</a></p>
