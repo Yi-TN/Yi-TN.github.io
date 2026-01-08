@@ -1,7 +1,7 @@
 ---
-permalink: /blogs/
-title: "Blogs"
-collection: blogs
+permalink: /posts/
+title: "Posts"
+collection: posts
 layout: collection
 entries_layout: grid
 classes: wide

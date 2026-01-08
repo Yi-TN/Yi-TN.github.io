@@ -56,11 +56,11 @@ inprogress_row:
     btn_label: "Read More"
     btn_class: "btn--success"
 
-blogs_row:
-  - image_path: /assets/images/blogs/cross_hatching/cover.png
+posts_row:
+  - image_path: /assets/images/posts/cross_hatching/cover.png
     title: "Cross Hatching Line"
     excerpt: "Post-processing cross hatching line shader implemented in UE5."
-    url: "/blogs/cross_hatching/"
+    url: "/posts/cross_hatching/"
     btn_label: "Read More"
     btn_class: "btn--success"
 
@@ -83,10 +83,10 @@ blogs_row:
 
 <p><a class="btn btn--primary" href="{{ "/in_progress/" | inprogress-archive }}">Explore all in progress works &raquo;</a></p>
 
-<h1><center>Blogs</center></h1>
+<h1><center>posts</center></h1>
 <hr/>
 
 
-{% include feature_row id= "blogs_row" %}
+{% include feature_row id= "posts_row" %}
 
-<p><a class="btn btn--primary" href="{{ "/blogs/" | blogs-archive }}">Explore all blogs &raquo;</a></p>
+<p><a class="btn btn--primary" href="{{ "/posts/" | posts-archive }}">Explore all posts &raquo;</a></p>

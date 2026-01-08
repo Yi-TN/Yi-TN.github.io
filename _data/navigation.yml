@@ -5,8 +5,8 @@ main:
     url: /completed_projects/
   - title: "In Progress"
     url: /in_progress/
-  - title: "Blogs"
-    url: /blogs/
+  - title: "posts"
+    url: /posts/
   - title: "About Me"
     url: /about/
   - title: "Resume"

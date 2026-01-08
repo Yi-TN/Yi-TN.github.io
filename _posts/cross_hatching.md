@@ -3,7 +3,7 @@ layout: single          # use single so TOC is available
 author_profile: false
 toc: true
 classes: wide
-permalink: /blogs/cross_hatching/
+permalink: /posts/cross_hatching/
 title: "Cross Hatching Line"
 excerpt: "Post-processing cross hatching line shader implemented in UE5."
 

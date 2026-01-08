@@ -103,10 +103,10 @@ defaults:
     values:
       layout: single
       classes: wide
-  # _blogs
+  # _posts
   - scope:
-      path: "_blogs"
-      type: blogs
+      path: "_posts"
+      type: posts
     values:
       layout: single
       classes: wide
@@ -134,6 +134,6 @@ collections:
   in_progress:
     output: true
     permalink: /:collection/:title/
-  blogs:
+  posts:
     output: true
     permalink: /:collection/:title/
