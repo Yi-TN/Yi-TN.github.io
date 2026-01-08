@@ -56,7 +56,7 @@ inprogress_row:
     btn_label: "Read More"
     btn_class: "btn--success"
 
-posts_row
+posts_row:
   - image_path: /assets/images/blogs/cross_hatching/cover.png
     title: "Post-processing Cross Hatching Line Shader"
     url: "/posts/cross_hatching/
