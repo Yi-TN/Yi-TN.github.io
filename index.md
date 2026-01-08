@@ -82,3 +82,10 @@ posts_row:
 
 <p><a class="btn btn--primary" href="{{ "/in_progress/" | inprogress-archive }}">Explore all in progress works &raquo;</a></p>
 
+<h1><center>Blogs</center></h1>
+<hr/>
+
+
+{% include feature_row id= "posts_row" %}
+
+<p><a class="btn btn--primary" href="{{ "/posts/" | posts-archive }}">Explore all posts &raquo;</a></p>

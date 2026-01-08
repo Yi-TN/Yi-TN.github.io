@@ -83,7 +83,7 @@ footer:
 
 defaults:
   # _postsi
-  -scope:
+  - scope:
       path: ""
       type: pages
     values:
