@@ -57,9 +57,9 @@ inprogress_row:
     btn_class: "btn--success"
 
 posts_row:
-  - image_path: /assets/images/blogs/cross_hatching/cover.png
+  - image_path: /assets/images/blogs/cross_hatching/cover.png"
     title: "Post-processing Cross Hatching Line Shader"
-    url: "/posts/cross_hatching/
+    url: "/posts/cross_hatching/"
     btn_label: "Read More"
     btn_class: "btn--success"
 
@@ -82,7 +82,7 @@ posts_row:
 
 <p><a class="btn btn--primary" href="{{ "/in_progress/" | inprogress-archive }}">Explore all in progress works &raquo;</a></p>
 
-<h1><center>Posts</center></h1>
+<h1><center>Blogs</center></h1>
 <hr/>
 
 
