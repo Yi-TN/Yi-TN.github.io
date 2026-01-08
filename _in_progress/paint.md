@@ -43,6 +43,6 @@ I implemented a post-processing cross-hatching shader to create a hand-drawn, sk
 
 To maintain visual clarity and artistic control, I use the custom stencil buffer to selectively apply the effect only to specific actors, allowing the rest of the scene to remain clean or use different rendering styles.
 
-I provide a detailed breakdown of the shader’s implementation, including the math, texture usage, and Unreal Engine material in the post [Post-processing Cross Hatching Line Shader](/posts/cross_hatching.md).
+I provide a detailed breakdown of the shader’s implementation, including the math, texture usage, and Unreal Engine material in the post [Post-processing Cross Hatching Line Shader](/posts/cross_hatching/).
 
 ![Cross Hatching](/assets/images/paint/cross_hatching.png)
