@@ -1,4 +1,4 @@
-----
+---
 layout: single          # use single so TOC is available
 author_profile: false
 toc: true
@@ -14,7 +14,7 @@ header:
 #   actions:
 #     - label: "GitHub"
 #       url: "https://github.com/KoS-Y1/VRez"
-#   caption: "Screenshot of my project VRez"--
+#   caption: "Screenshot of my project VRez"
 
 ScreenUVs:
   - url: /assets/images/blogs/cross_hatching/uv_ratio.png
@@ -29,7 +29,8 @@ UvExamples:
     image_path: /assets/images/blogs/cross_hatching/uv_2.png
   - url: /assets/images/blogs/cross_hatching/uv_3.png
     image_path: /assets/images/blogs/cross_hatching/uv_3.png
-----
+
+---
 
 This shader is implemented in **Unreal Engine 5**, following the workflow in [Cross-Hatching material Post Process [UE5, valid for UE4]](https://www.youtube.com/watch?v=3Q6Ik1V75I8).
 
