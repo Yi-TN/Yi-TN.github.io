@@ -55,6 +55,12 @@ inprogress_row:
     url: "/in_progress/vrez_rt/"
     btn_label: "Read More"
     btn_class: "btn--success"
+  - image_path: /assets/imgaes/paint/cover.png
+    title: "Doodle War"
+    excerpt: "A third-person shooting game with stylized rendering"
+    url: "/in_progress/paint/"
+    btn_label: "Read More"
+    btn_class: "btn--success" 
 
 posts_row:
   - image_path: /assets/images/blogs/cross_hatching/cover.png
