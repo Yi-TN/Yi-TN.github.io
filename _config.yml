@@ -134,3 +134,6 @@ collections:
   in_progress:
     output: true
     permalink: /:collection/:title/
+  blogs:
+    output: true
+    permalink: /:collection/:title/
