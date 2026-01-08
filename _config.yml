@@ -106,7 +106,7 @@ defaults:
   # _blogs
   - scope:
       path: "_blogs"
-      type: pages
+      type: blogs
     values:
       layout: single
       classes: wide
