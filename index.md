@@ -58,7 +58,8 @@ inprogress_row:
 
 blogs_row:
   - image_path: /assets/images/blogs/cross_hatching/cover.png
-    title: "Post-processing Cross Hatching Line Shader"
+    title: "Cross Hatching Line"
+    excerpt: "Post-processing cross hatching line shader implemented in UE5."
     url: "/blogs/cross_hatching/"
     btn_label: "Read More"
     btn_class: "btn--success"

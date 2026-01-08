@@ -4,7 +4,8 @@ author_profile: false
 toc: true
 classes: wide
 permalink: /blogs/cross_hatching/
-title: "Post-processing Cross Hatching Line Shader"
+title: "Cross Hatching Line"
+excerpt: "Post-processing cross hatching line shader implemented in UE5."
 
 header:
   teaser: /assets/images/blogs/cross_hatching/cover.png 
