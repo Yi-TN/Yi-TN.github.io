@@ -6,7 +6,7 @@ main:
   - title: "In Progress"
     url: /in_progress/
   - title: "Blogs"
-    url: /posts/
+    url: /blogs/
   - title: "About Me"
     url: /about/
   - title: "Resume"

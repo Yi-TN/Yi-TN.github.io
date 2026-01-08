@@ -103,9 +103,9 @@ defaults:
     values:
       layout: single
       classes: wide
-  # _posts
+  # _blogs
   - scope:
-      path: "_posts"
+      path: "_blogs"
       type: pages
     values:
       layout: single

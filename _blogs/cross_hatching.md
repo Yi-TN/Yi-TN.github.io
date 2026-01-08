@@ -3,7 +3,7 @@ layout: single          # use single so TOC is available
 author_profile: false
 toc: true
 classes: wide
-permalink: /posts/cross_hatching/
+permalink: /blogs/cross_hatching/
 title: "Post-processing Cross Hatching Line Shader"
 
 header:
