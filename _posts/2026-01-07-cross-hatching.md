@@ -59,8 +59,6 @@ This can be done by using *TransformVector* node. After the transformation, we o
 
 ## Cross Hatching Lines
 
-### Line Pattern Generation
-
 Now we can generate our cross hatching line patterns. We start by taking the **dot product** of our *Adjusted Screen UVs* and *Screen Relative Light Vector*. This produces a smooth gradient ranging from black to white, depending on how aligned the UV direction is with the light direction. 
 
 Next, we multiply this result by the **line density**, which controls how frequently the lines reapt. Finally, we apply the *Frac* node. Since *Frac* outputs only the fractional portion of the input value(a value between 0 and 1), which is exactly the color range from black to white. Thus, we get a neat, evenly spaced line patterns. 
@@ -71,4 +69,17 @@ If you are confused about how the dot product works here, try replacing the ligh
 
 Right now, our lines are pretty jaggy, that's because at boundaries of each small gradient segment, the value abruptly jumps between 0 and 1. This causes the visible aliasing in the pattern. To smooth it out, we can remap the value from (0, 1) to (-1, 1), then take its absolute value. Now we will have a nice and smooth line patterns.
 
-![Line Pattern](/assets/images/blogs/cross_hatching/smooth_line_pattern.png)
+![Smooth Line Pattern](/assets/images/blogs/cross_hatching/smooth_line_pattern.png)
+
+Because our line patterns are composed of many repeating gradient segments from black to white, we can control the line thickness by adjusting how much of each segment remains in the black region. Practically, this means subtracting a **line thickness** value from the pattern, which shifts more of the gradient below zero and results in thicker lines.
+
+We can further refine appearance by dividing the result by a **line contrast** value. This scales the gradient and allows us to control how sharp or soft the transition between dark and light areas appears.
+
+Finally, don't forget to saturate the value after all these operations.
+
+![Controlled Line Pattern](/assets/images/blogs/cross_hatching/line_control.png)
+
+## Ink Masks
+
+
+## TBC...
