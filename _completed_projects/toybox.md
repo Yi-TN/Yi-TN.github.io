@@ -63,4 +63,4 @@ Here are a few examples of the in-game interface and features.
 + Developed a C# library to inject and modify game code .
     + Utilized [Unity Mod Manager (UMM)](https://www.nexusmods.com/site/mods/21) to load the library.
     + Applied runtime patches using[Harmony](https://harmony.pardeike.net/) to modify game behavior directly.
-+ Inspected internal game mechanics represented as [Blueprints](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/%5BWrath%5D-Blueprints), using tools such as (BubblePrints)[https://github.com/factubsio/BubblePrints] and [Data Viewer](https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/9), to understand and modify gameplay data.
++ Inspected internal game mechanics represented as [Blueprints](https://github.com/WittleWolfie/OwlcatModdingWiki/wiki/%5BWrath%5D-Blueprints), using tools such as [BubblePrints](https://github.com/factubsio/BubblePrints) and [Data Viewer](https://www.nexusmods.com/pathfinderwrathoftherighteous/mods/9), to understand and modify gameplay data.

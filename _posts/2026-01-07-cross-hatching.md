@@ -57,4 +57,18 @@ This can be done by using *TransformVector* node. After the transformation, we o
 
 ![Light Node](/assets/images/blogs/cross_hatching/light_vector.png)
 
-## TBC...
+## Cross Hatching Lines
+
+### Line Pattern Generation
+
+Now we can generate our cross hatching line patterns. We start by taking the **dot product** of our *Adjusted Screen UVs* and *Screen Relative Light Vector*. This produces a smooth gradient ranging from black to white, depending on how aligned the UV direction is with the light direction. 
+
+Next, we multiply this result by the **line density**, which controls how frequently the lines reapt. Finally, we apply the *Frac* node. Since *Frac* outputs only the fractional portion of the input value(a value between 0 and 1), which is exactly the color range from black to white. Thus, we get a neat, evenly spaced line patterns. 
+
+If you are confused about how the dot product works here, try replacing the light vector with a custom float2 node. By manually changing its direction, you can clearly observe how the orientation of the light vector directly influences the direction and appearance of the cross hatching lines.
+
+![Line Pattern](/assets/images/blogs/cross_hatching/line_pattern.png)
+
+Right now, our lines are pretty jaggy, that's because at boundaries of each small gradient segment, the value abruptly jumps between 0 and 1. This causes the visible aliasing in the pattern. To smooth it out, we can remap the value from (0, 1) to (-1, 1), then take its absolute value. Now we will have a nice and smooth line patterns.
+
+![Line Pattern](/assets/images/blogs/cross_hatching/smooth_line_pattern.png)
