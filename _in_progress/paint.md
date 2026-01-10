@@ -46,3 +46,191 @@ To maintain visual clarity and artistic control, I use the custom stencil buffer
 I provide a detailed breakdown of the shader’s implementation, including the math, texture usage, and Unreal Engine material in the post [Post-processing Cross Hatching Line Shader](/posts/cross_hatching/).
 
 ![Cross Hatching](/assets/images/paint/cross_hatching.png)
+
+### Kuwahara filter
+I also implemeted a post-processing Kuwahara filter to achieve painterly style look, following [ue4 - tutorial - painterly post processing - kuwahara filter](https://www.youtube.com/watch?v=pe3yt3dup04&t). The key hlsl code and shader nodes are showing below.
+
+![kuwahara shader](/assets/images/paint/kuwahara_node.png)
+
+``` hlsl
+float3 mean[4] = {
+    {0, 0, 0},
+    {0, 0, 0},
+    {0, 0, 0},
+    {0, 0, 0}
+};
+
+float3 sigma[4] = {
+    {0, 0, 0},
+    {0, 0, 0},
+    {0, 0, 0},
+    {0, 0, 0}
+};
+
+float2 offsets[4] = {
+    {-radius.x, -radius.y},
+    {-radius.x, 0},
+    {0, -radius.y},
+    {0, 0}
+};
+
+float2 pos;
+float3 color;
+
+float gradientx = 0;
+float gradienty = 0;
+
+float sobelx[9] = {-1, -2, -1, 0, 0, 0, 1, 2 ,1};
+float sobely[9] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
+
+int index = 0;
+
+float2 texelsize = 1.0/viewsize;
+
+for(int x = -1; x <= 1; ++x){
+    for(int y = -1; y <= 1; ++y){
+        if(index == 4){
+            ++index;
+            continue;
+        }
+
+        float2 offset = float2(x, y) * texelsize;
+        float3 pxcolor = scenetexturelookup(uv + offset, 14, false).xyz;
+        float pxlum = dot(pxcolor, float3(0.2126, 0.7152, 0.0722));
+
+        gradientx += pxlum * sobelx[index];
+        gradienty += pxlum * sobely[index];
+
+        ++index;
+    }
+}
+
+float angle = atan2(gradienty, gradientx);
+
+float s = sin(angle);
+float c = cos(angle);
+
+
+for(int i = 0; i < 4; ++i){
+    for(int j = 0; j <= radius.x; ++j){
+        for(int k = 0; k <= radius.y; ++k){
+            pos = float2(j, k) + offsets[i];
+            float2 offs = pos * texelsize;
+            offs = float2(offs.x * c - offs.y * s, offs.x * s + offs.y * c);
+            float2 uvpos = uv + offs;
+
+            color = scenetexturelookup(uvpos, 14, false);
+
+            mean[i] += color;
+            sigma[i] += color * color;
+        }
+    }
+}
+
+float n = (radius.x + 1) * (radius.y + 1);
+float sigma_f;
+
+float min = 1;
+
+for(int i = 0; i < 4; ++i){
+    mean[i] /= n;
+    sigma[i] = abs(sigma[i] / n - mean[i] * mean[i]);
+    sigma_f = sigma[i].r + sigma[i].g + sigma[i].b;
+
+    if(sigma_f < min){
+        min = sigma_f;
+        color = mean[i];
+    }
+}
+
+return color;
+```
+
+![Kuwahara](/assets/images/paint/kuwahara.png)
+
+I may have a post to talk about the maths in details in the future.
+
+### Post-Processing Outlines
+To get stable screen-space outlines, I implemented Sobel edge detection using both the Scene Depth buffer and World Normal in a post-process material.
+
+The idea is simple:
+
++ Depth edges catch object silhouettes and discontinuities in depth.
++ Normal edges catch creases and surface changes even when depth is similar.
+
+The key hlsl code and shader nodes are below.
+
+``` hlsl
+// Depth based edge detection
+float gradientX = 0;
+float gradientY = 0;
+
+float sobelX[9] = {-1, -2, -1, 0, 0, 0, 1, 2 ,1};
+float sobelY[9] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
+
+int index = 0;
+
+float texelSize = LineThickness/ViewSize;
+
+for(int x = -1; x <= 1; ++x){
+    for(int y = -1; y <= 1; ++y){
+        if(index == 4){
+            ++index;
+            continue;
+        }
+
+        float2 offset = float2(x, y) * texelSize;
+        float pxColor = SceneTextureLookup(UV + offset, PPI_SceneDepth, false).r;
+        pxColor = ConvertFromDeviceZ(pxColor);
+
+        gradientX += pxColor * sobelX[index];
+        gradientY += pxColor * sobelY[index];
+
+        ++index;
+    }
+}
+
+return length(float2(gradientX, gradientY));
+
+// Normal based edge detection
+float gradientX = 0;
+float gradientY = 0;
+
+float sobelX[9] = {-1, -2, -1, 0, 0, 0, 1, 2 ,1};
+float sobelY[9] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
+
+int index = 0;
+
+float texelSize = LineThickness/ViewSize;
+
+float3 currentNormal = SceneTextureLookup(UV, PPI_WorldNormal, false);
+
+for(int x = -1; x <= 1; ++x){
+    for(int y = -1; y <= 1; ++y){
+        if(index == 4){
+            ++index;
+            continue;
+        }
+
+        float2 offset = float2(x, y) * texelSize;
+        float pxNormal = SceneTextureLookup(UV + offset, PPI_WorldNormal, false).r;
+        float diff = 1.0 - saturate(dot(currentNormal, pxNormal));
+
+        gradientX += diff * sobelX[index];
+        gradientY += diff * sobelY[index];
+
+        ++index;
+    }
+}
+
+float angle = 0;
+if(abs(gradientX) > 0.001){
+    atan(gradientY / gradientX);
+}
+
+return length(float2(gradientX, gradientY));
+```
+
+![Outline Nodes](/assets/images/paint/outline_nodes.png)
+
+![Outline](/assets/images/paint/outlines.png)
