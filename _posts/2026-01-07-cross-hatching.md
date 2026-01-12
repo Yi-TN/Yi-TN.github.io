@@ -1,6 +1,6 @@
 ---
 layout: single          # use single so TOC is available
-author_profile: false
+author_profile: true
 toc: true
 classes: wide
 permalink: /posts/cross_hatching/
@@ -80,6 +80,17 @@ Finally, don't forget to saturate the value after all these operations.
 ![Controlled Line Pattern](/assets/images/blogs/cross_hatching/line_control.png)
 
 ## Ink Masks
+In traditional drawing, artists use dense lines to represent darker tones and fewer or no lines for lighter areas. We mimic this behavior by generating multiple ink masks based on image luminance and gradient thresholds.
 
+
+First, we calculate the luminace of the image using [Relative Luminance](https://en.wikipedia.org/wiki/Relative_luminance) formula:
+**L = 0.2126  * R + 0.7152 * G + 0.0722 * B**. 
+In the shader, this is implemented by taking the dot product between the RGB value sampled from the post-processing texture and a constant float3(0.2126, 0.7152, 0.0722).
+
+Since artists often layer multiple sets of cross-hatching lines to convey varying degrees of shading, we generate multiple ink masks rather than a single one. Each mask corresponds to a different luminance range and is created using an *Inverse Lerp (InvLerp)* with distinct threshold intervals.
+
+By stacking several InvLerp operations with progressively darker ranges, we obtain a set of ink masks that represent increasing shading intensity. These masks are later used to selectively apply different layers of cross-hatching lines, producing a more expressive and hand-drawn appearance.
+
+![Ink Masks](/assets/images/blogs/cross_hatching/ink_masks.png)
 
 ## TBC...
