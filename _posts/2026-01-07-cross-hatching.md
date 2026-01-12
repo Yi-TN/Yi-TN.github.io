@@ -87,10 +87,22 @@ First, we calculate the luminace of the image using [Relative Luminance](https:/
 **L = 0.2126  * R + 0.7152 * G + 0.0722 * B**. 
 In the shader, this is implemented by taking the dot product between the RGB value sampled from the post-processing texture and a constant float3(0.2126, 0.7152, 0.0722).
 
-Since artists often layer multiple sets of cross-hatching lines to convey varying degrees of shading, we generate multiple ink masks rather than a single one. Each mask corresponds to a different luminance range and is created using an *Inverse Lerp (InvLerp)* with distinct threshold intervals.
-
+Since artists often layer multiple sets of cross-hatching lines to convey varying degrees of shading, we generate multiple ink masks rather than a single one. Each mask corresponds to a different luminance range and is created using an *Inverse Lerp (InvLerp)* with distinct threshold intervals. Apply *Step* node after it to get a black and white mask.
 By stacking several InvLerp operations with progressively darker ranges, we obtain a set of ink masks that represent increasing shading intensity. These masks are later used to selectively apply different layers of cross-hatching lines, producing a more expressive and hand-drawn appearance.
 
 ![Ink Masks](/assets/images/blogs/cross_hatching/ink_masks.png)
+
+## Apply Effect & Line Control
+
+At this stage, the **ink mask** defines the regions where cross hatching lines should appear, with shaded areas represented as black(0). Since our line paterns are applied where the value is white(1), by multiply operation, we first need to invert the ink msk using *OneMinus(1-x)* operation. This converts the shaded regions into valid mask areass for applying the effect.
+
+Next, we multiply the inverted ink mask with the generated **line pattern**, producing corss hatching only in the designated shaded regions. However, this operation results in all non-masked areas becoming black. To restore the background, we can apply another *OneMinus(1-x)* node to the result. Unfortunately, directly inverting at this stage also unintentionally reverses visiaul properties of the line patterns, such as line thickness and contrast. To resolve this, we can just simply apply *OneMinus(1-x)* node to the line pattern itself before multiplying it with the ink mask.
+
+
+Before performing the final inversion, we also introduce a **line opacity** parameter. By multiplying the masked line pattern with this scalar value, we gain fine control over the visibility and strength of the cross hatching effect.
+
+![Line Effect 1](/assets/images/blogs/cross_hatching/effect_1.png)
+
+## Multi Cross Hatching Line Layers
 
 ## TBC...
