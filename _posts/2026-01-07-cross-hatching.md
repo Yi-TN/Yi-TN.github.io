@@ -105,4 +105,14 @@ Before performing the final inversion, we also introduce a **line opacity** para
 
 ## Multi Cross Hatching Line Layers
 
+To achieve richer and more expressive shading, we introduce multiple layers of cross-hatching lines, each oriented in a different direction. This mimics traditional drawing techniques, where artists layer strokes at varying angles to represent darker tones and convey form.
+
+We generate these different line orientations by applying a Rotator node to the ScreenRelativeLightVector. By rotating this vector by different angles, we effectively change the direction along which the line pattern is evaluated. Each rotation produces a distinct cross-hatching layer with its own stroke direction.
+
+By stacking several of these rotated line layers—each with a unique rotation angle—we create a multi-directional hatching effect. When combined with the previously computed ink masks, darker regions naturally accumulate more line layers, resulting in denser shading, while lighter regions remain relatively sparse.
+
+![Rotator](/assets/images/blogs/cross_hatching/rotator.png)
+
+## Voronoi
+
 ## TBC...
