@@ -114,5 +114,15 @@ By stacking several of these rotated line layers—each with a unique rotation a
 ![Rotator](/assets/images/blogs/cross_hatching/rotator.png)
 
 ## Voronoi
+Right now our line patterns are too aligned, that's not usually hand-drawing cross-hatching lines are in real life, so we need to add some noise to it, and we are gonna use Voronoi to implement it.
+First, let's get our **AdjustedScreenUVs** again and multiply it by the **Voronoi Density**. The Voronoi in Unreal Engine 5 is 3D, but we only need the noise in 2D space, so we need to append a third coordinate to the UVs as a **Voronoi Radmon Seed**.
+
+![Voronoi](/assets/images/blogs/cross_hatching/voronoi.png)
+
+We can also apply *Cellnise* to the result, to give each cell a different color. So that we can use one channel of this random color as a radom rotation on the light vector to slightly change the light direction in each Vornoi patch. We name it as **Voronoi Random**
+
+![Voronoi Color](/assets/images/blogs/cross_hatching/voronoi_color.png)
+
+## Random Light Rotation
 
 ## TBC...
