@@ -119,10 +119,24 @@ First, let's get our **AdjustedScreenUVs** again and multiply it by the **Vorono
 
 ![Voronoi](/assets/images/blogs/cross_hatching/voronoi.png)
 
-We can also apply *Cellnise* to the result, to give each cell a different color. So that we can use one channel of this random color as a radom rotation on the light vector to slightly change the light direction in each Vornoi patch. We name it as **Voronoi Random**
+We can also apply *Cellnise* to the result, to give each cell a different color. So that we can use one channel of this random color as a radom rotation on the light vector to slightly change the light direction in each Vornoi patch. We take one of its channels and name it as **Voronoi Random Data**
 
 ![Voronoi Color](/assets/images/blogs/cross_hatching/voronoi_color.png)
 
 ## Random Light Rotation
+
+We now use the **Voronoi Random Data** to introduce per-segment directional variation into the cross-hatching lines. This randomness is applied as a rotation to the line pattern direction, helping to further break up uniformity and reinforce a hand-drawn appearance.
+
+First, we subtract 0.5 from the Voronoi Random value. Since the original data lies in the [0,1] range, this remaps it to [−0.5,0.5], allowing the rotation to occur in both clockwise and counterclockwise directions.
+
+Next, we scale this value by a **Line Max Random Rotation** parameter. This parameter defines the maximum angular deviation applied to each Voronoi cell and provides artistic control over how chaotic or subtle the variation appears.
+
+The resulting value is then fed into a Rotator node, which rotates the **ScreenRelativeLightVector** accordingly. Because the Voronoi Random value is constant within each cell, all line segments inside a cell share the same rotation, producing coherent yet varied stroke directions across the image.
+
+With this step applied, the cross-hatching lines gain localized directional variation, making the final result feel significantly more organic and closer to traditional ink drawing.
+
+![Voronoi Lines](/assets/images/blogs/cross_hatching/voronoi_line.png)
+
+## Improve Voronoi
 
 ## TBC...
