@@ -234,3 +234,7 @@ return length(float2(gradientX, gradientY));
 ![Outline Nodes](/assets/images/paint/outline_nodes.png)
 
 ![Outline](/assets/images/paint/outlines.png)
+
+## Meshes & Animations
+
+I retargeted the IK rig from the default Manny character to a custom model downloaded from Fab. Using this setup, I created an Animation Blueprint incorporating Blend Spaces and Aim Offsets to achieve smooth, responsive character movement and aiming animations.

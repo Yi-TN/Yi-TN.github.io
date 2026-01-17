@@ -138,5 +138,48 @@ With this step applied, the cross-hatching lines gain localized directional vari
 ![Voronoi Lines](/assets/images/blogs/cross_hatching/voronoi_line.png)
 
 ## Improve Voronoi
+At this stage, the Voronoi cells still appear too square and uniform. In real hand-drawn cross-hatching, stroke groupings tend to be elongated along the stroke direction, not isotropic. To better approximate this behavior, we stretch the Voronoi pattern along the line direction.
+
+### Construct the Light Tangent
+
+We begin by computing a vector perpendicular to the light direction. Starting from the **Screen Relative Light Vector**, we negate its R channel and swap it with the G channel, producing a perpendicular vector we refer to as the **Screen Relative Light Tangent**.
+
+This tangent represnets the direction orthogonal to the cross hatching lines.
+
+![Light Tangent](/assets/images/blogs/cross_hatching/light_tangent.png)
+
+### Directional UV Decomposition
+
+Recall that:
+
++ The dot product between the light vector and screen UVs produces a gradient whose black–white transition is perpendicular to the line direction.
+
++ Conversely, the dot product between the light tangent and the UVs produces a gradient whose transition aligns with the line direction.
+
+We use this property to decompose the UVs into two directional components:
+
++ One along the light direction
+
++ One along the tangent direction
+
+### Anisotropic Voronoi Stretching
+
+To elongate the Voronoi cells along the stroke direction:
+
+1. We multiply the dot product of light tangent · UV by a Voronoi Skew scalar, stretching the pattern along to the strokes.
+
+2. To preserve the overall cell size, we divide the dot product of light vector · UV by the same skew value.
+
+3. We then reconstruct the final UVs by multiplying each scalar component back with its respective direction vector (light vector and light tangent) and summing the results.
+
+These reconstructed UVs are used as the input to the Voronoi noise function.
+
+![Voronoi Better](/assets/images/blogs/cross_hatching/voronoi_better.png)
+
+And the cross hatching line patterns look more line hand drawing now as well.
+
+With directional stretching applied, the Voronoi cells become elongated along the cross-hatching direction. This produces more natural stroke groupings and significantly improves the hand-drawn quality of the final cross-hatching lines.
+
+![Line Better](/assets/images/blogs/cross_hatching/line_better.png)
 
 ## TBC...
