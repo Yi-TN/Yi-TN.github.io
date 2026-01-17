@@ -182,4 +182,16 @@ With directional stretching applied, the Voronoi cells become elongated along th
 
 ![Line Better](/assets/images/blogs/cross_hatching/line_better.png)
 
+## Improve Cross Hatching Lines
+### Resolution Reference
+To ensure consistent cross-hatching density across different screen resolutions, we introduce a resolution-aware scaling for the line pattern.
+
+We begin by retrieving the current viewport size and dividing it by a **Reference Resolution** scalar. This produces a normalized scale factor that represents how the current resolution compares to the reference.
+
+We then multiply this scale factor with the **Line Density parameter**. As a result, the number of cross-hatching lines automatically adjusts based on screen resolution: higher resolutions generate proportionally more lines, while lower resolutions produce fewer, preserving a consistent visual density.
+
+This approach ensures that the cross-hatching effect remains stable and visually coherent across different display sizes without requiring manual tuning per resolution.
+
+![Reference Resolution](/assets/images/blogs/cross_hatching/reference_resolution.png)
+
 ## TBC...
