@@ -67,7 +67,7 @@ If you are confused about how the dot product works here, try replacing the ligh
 
 ![Line Pattern](/assets/images/blogs/cross_hatching/line_pattern.png)
 
-Right now, our lines are pretty jaggy, that's because at boundaries of each small gradient segment, the value abruptly jumps between 0 and 1. This causes the visible aliasing in the pattern. To smooth it out, we can remap the value from (0, 1) to (-1, 1), then take its absolute value. Now we will have a nice and smooth line patterns.
+Right now, our lines are pretty jaggy, that's because at boundaries of each small gradient segment, the value abruptly jumps between 0 and 1. This causes the visible aliasing in the pattern. To smooth it out, we can remap the value from \((0, 1)\) to \((-1, 1)\), then take its absolute value. Now we will have a nice and smooth line patterns.
 
 ![Smooth Line Pattern](/assets/images/blogs/cross_hatching/smooth_line_pattern.png)
 
@@ -84,8 +84,8 @@ In traditional drawing, artists use dense lines to represent darker tones and fe
 
 
 First, we calculate the luminace of the image using [Relative Luminance](https://en.wikipedia.org/wiki/Relative_luminance) formula:
-**L = 0.2126  * R + 0.7152 * G + 0.0722 * B**. 
-In the shader, this is implemented by taking the dot product between the RGB value sampled from the post-processing texture and a constant float3(0.2126, 0.7152, 0.0722).
+\[L = 0.2126  * R + 0.7152 * G + 0.0722 * B\]. 
+In the shader, this is implemented by taking the dot product between the RGB value sampled from the post-processing texture and a constant float3\((0.2126, 0.7152, 0.0722)\).
 
 Since artists often layer multiple sets of cross-hatching lines to convey varying degrees of shading, we generate multiple ink masks rather than a single one. Each mask corresponds to a different luminance range and is created using an *Inverse Lerp (InvLerp)* with distinct threshold intervals. Apply *Step* node after it to get a black and white mask.
 By stacking several InvLerp operations with progressively darker ranges, we obtain a set of ink masks that represent increasing shading intensity. These masks are later used to selectively apply different layers of cross-hatching lines, producing a more expressive and hand-drawn appearance.
@@ -127,7 +127,7 @@ We can also apply *Cellnise* to the result, to give each cell a different color.
 
 We now use the **Voronoi Random Data** to introduce per-segment directional variation into the cross-hatching lines. This randomness is applied as a rotation to the line pattern direction, helping to further break up uniformity and reinforce a hand-drawn appearance.
 
-First, we subtract 0.5 from the Voronoi Random value. Since the original data lies in the [0,1] range, this remaps it to [−0.5,0.5], allowing the rotation to occur in both clockwise and counterclockwise directions.
+First, we subtract 0.5 from the Voronoi Random value. Since the original data lies in the \([0,1]\) range, this remaps it to \([−0.5,0.5]\), allowing the rotation to occur in both clockwise and counterclockwise directions.
 
 Next, we scale this value by a **Line Max Random Rotation** parameter. This parameter defines the maximum angular deviation applied to each Voronoi cell and provides artistic control over how chaotic or subtle the variation appears.
 
@@ -193,5 +193,28 @@ We then multiply this scale factor with the **Line Density parameter**. As a res
 This approach ensures that the cross-hatching effect remains stable and visually coherent across different display sizes without requiring manual tuning per resolution.
 
 ![Reference Resolution](/assets/images/blogs/cross_hatching/reference_resolution.png)
+
+### Random Line Density
+To further reduce uniformity in the cross hatching pattern, we introduce random variation in line density using an additional channel from the Voronoi noise, referred to as **Voronoi Random Data 2**.
+
+![Voronoi Data 2](/assets/images/blogs/cross_hatching/voronoi_data_2.png)
+
+The **Voronoi Random Data 2** value lies in the \([0, 1]\) range. We first subtract 0.5 to remap it to \([-0.5, 0.5]\), allowing both positive and negative variation.
+
+Next, we scale the base **Line Density** by a small factor (e.g. 0.1) to define the maximum amount of variation. Multiplying this value with the remapped Voronoi data produces a density offset in the range:
+
+\[
+[-0.05 \cdot \text{LineDensity},\; 0.05 \cdot \text{LineDensity}]
+\]
+
+We then add this offset back to the original Line Density, resulting in a final density range of:
+
+\[
+[0.95 \cdot \text{LineDensity},\; 1.05 \cdot \text{LineDensity}]
+\]
+
+![Random Density](/assets/images/blogs/cross_hatching/random_density.png)
+
+This introduces a subtle ±5% variation in line density per Voronoi cell. The randomness is spatially coherent and stable, preventing flickering while breaking up mechanical repetition. As a result, the cross-hatching appears more organic and closer to real hand-drawn ink work.
 
 ## TBC...
