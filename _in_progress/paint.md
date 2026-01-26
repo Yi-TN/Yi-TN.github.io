@@ -238,3 +238,10 @@ return length(float2(gradientX, gradientY));
 ## Meshes & Animations
 
 I retargeted the IK rig from the default Manny character to a custom model downloaded from Fab. Using this setup, I created an Animation Blueprint incorporating Blend Spaces and Aim Offsets to achieve smooth, responsive character movement and aiming animations.
+
+
+## Framework
+
+### Gameplay Ability System
+
+**Gameplay Ability System (GAS)** is used to implement core gameplay architecture, including attributes, abilities, and their interactions. GAS provides a modular and data-driven foundation for managing character statistics, ability activation, and gameplay effects in a scalable and network-ready manner.

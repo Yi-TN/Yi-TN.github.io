@@ -235,5 +235,16 @@ Finally, we multiply **Threshold AO** with our existing **Ink Mask**. This reinf
 
 By modulating the ink mask with ambient occlusion, darker creases and contact areas naturally receive denser hatching, further enhancing depth and visual realism.
 
+## Paper Texture
+
+### Line Thickness
+To introduce subtle variation in line thickness across the screen, we incorporate a paper texture. A single channel of the paper texture is sampled and remapped from [0,1] to [−0.25,0.25], producing a small signed offset.
+
+![Paper Texture](/assets/images/blogs/cross_hatching/paper_texture.png)
+
+This offset is then added to the base **Line Thickness** value, injecting controlled randomness that breaks uniformity and enhances the hand-drawn appearance.
+
+![Thickness Variation](/assets/images/blogs/cross_hatching/thickness_variaton.png)
+
 
 ## TBC...
