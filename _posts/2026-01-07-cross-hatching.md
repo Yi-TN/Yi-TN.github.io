@@ -246,5 +246,33 @@ This offset is then added to the base **Line Thickness** value, injecting contro
 
 ![Thickness Variation](/assets/images/blogs/cross_hatching/thickness_variaton.png)
 
+### Paper Texture Background
+The paper texture can also be used as a background to further enhance realism. Ideally, the final result should be multiplied by the paper texture; however, the original texture is relatively dark, which would overly dim the output. To address this, we remap the texture values to a brighter range.
 
-## TBC...
+This remapping is achieved by applying a *OneMinus* operation, scaling the result by a small factor, and then applying *OneMinus* again. Let v denote the original texture value:
+0 < v < 1
+0 < 1 - v < 1 
+0 < 0.25 * (1 - v) < 0.25 
+0.75 < 1 - 0.25 * (1 - v) < 1
+0.75 < v' < 1
+
+After remapping, the new value v′ lies in the range [0.75,1], preserving the texture detail while significantly reducing its darkening effect.
+
+![Remapped Paper Texture](/assets/images/blogs/cross_hatching/remapped_texture.png)
+
+Finally, this remapped paper texture is multiplied with the rendered result, adding a subtle paper grain to the background without overpowering the line work.
+
+![Paper Texture Background](/assets/images/blogs/cross_hatching/paper_background.png)
+
+### Shadow Depth
+We begin by separating shadowed regions using the *Dot* product between the *World Normal and the main light direction. This produces a scalar value representing how much each surface faces the light. The paper texture is then added directly to this value to introduce subtle variation.
+
+Since the effect should only apply to shadowed areas, we isolate the shadow range by applying an *InvLerp*, followed by a *Saturate* to clamp the result to [0,1]. The value is then multiplied by itself to amplify contrast, emphasizing darker regions.
+
+Next, we apply the same remapping process used for the Paper Texture Background, shifting the result into a lighter range to prevent the shadows from becoming overly dark. This remapping step can be applied a second time to further soften the shading and introduce a degree of transparency.
+
+![Shadow Depth](/assets/images/blogs/cross_hatching/shadow_depth.png)
+
+Finally, the processed shadow depth mask is multiplied with the cross-hatching result, producing a balanced and visually coherent shading effect.
+
+![Final Result](/assets/images/blogs//cross_hatching/final_result.png)

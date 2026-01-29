@@ -193,3 +193,6 @@ private:
 I integrated [spdlog](https://github.com/gabime/spdlog) for structured logs with timestamps and levels, replacing SDL_Log.
 
 ![Log](/assets//images/vrez_rt/log.png)
+
+### Better Shader Lanaguage
+I migrated the project to use [Slang](https://github.com/shader-slang/slang), a modern shader language with a more expressive and ergonomic design. Compared to GLSL, Slang offers improved usability, better abstraction support, and a cleaner workflow for cross-platform shader development.
