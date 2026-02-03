@@ -64,7 +64,7 @@ inprogress_row:
   - image_path: /assets/image/ink_mage/cover.png
     title: "Ink Mage"
     excerpt: "An online turned-base game."
-    url:: "/in_progress/ink_mage/
+    url:: "/in_progress/ink_mage/"
     btn_label: "Read More"
     btn_class: "btn--success"
 posts_row:
