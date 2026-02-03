@@ -61,7 +61,11 @@ inprogress_row:
     url: "/in_progress/paint/"
     btn_label: "Read More"
     btn_class: "btn--success" 
-
+  - image_path: /assets/image/ink_mage/cover.png
+    title: "Ink Mage"
+    excerpt: "An online turned-base game."
+    btn_label: "Read More"
+    btn_class: "btn--success"
 posts_row:
   - image_path: /assets/images/blogs/cross_hatching/cover.png
     title: "Cross Hatching Line"
