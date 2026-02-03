@@ -8,10 +8,10 @@ title: "Ink Mage"
 excerpt: "An online turned-base game."
 
 header:
-  teaser: /assets/images/ink_mage/banner/png 
+  teaser: /assets/images/ink_mage/cover.png 
   overlay_color: "#000"
   overlay_filter: 0.7
-  overlay_image: /assets/images/paint/pp_shader.png
+  overlay_image: /assets/images/ink_mage/banner.png
 #   actions:
 #     - label: "GitHub"
 #       url: "https://github.com/KoS-Y1/VRez"
@@ -35,15 +35,15 @@ sidebar:
 {: .notice--success}
 
 ## my responsibilities
-### lead programmer
+### Lead programmer
 - Led technical discussions to define the core gameplay mechanics and the "Drawing-Analysis-Resolution" loop.
 - Implemented the base project structure within Unity, ensuring a modular codebase that allows for seamless integration between the Computer Vision and Networking modules.
 
-below is the designed structure (subject to updates).
+Below is the designed structure (subject to updates).
 
 ![uml](/assets/images/ink_mage/uml.png)
 
-### network programmer
-- Implemented a high-performance networking layer using the [MagicOnion] (https://github.com/cysharp/magiconion).(gRPC) framework, enabling low-latency, real-time communication between clients and the server. 
+### Network programmer
+- Implemented a high-performance networking layer using the [MagicOnion](https://github.com/cysharp/magiconion)(gRPC) framework, enabling low-latency, real-time communication between clients and the server. 
 - Designed and optimized the server-side communication services to handle concurrent data streams from multiple players, ensuring the symbol recognition engine processes inputs without blocking the main thread.
 - Developed the RPC interfaces and service definitions that standardized how the Unity client interacts with the server, facilitating robust data serialization and synchronized state updates.
