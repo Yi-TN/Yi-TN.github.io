@@ -102,6 +102,13 @@ Planned support for Lua scripting to enable:
 
 Here are some improvements compared to [VRez](/completed_projects/vrez/).
 
+### Frames In Flight
+[VRez](/completed_projects/vrez/) only uses a single frame of rendering context and relies on strict CPU–GPU synchronization. As a result, the CPU often has to stall while waiting for the GPU to finish processing the current frame before it can begin preparing the next one. This can significantly reduce overall throughput and introduce unnecessary idle time.
+
+Modern rendering and game engines typically adopt a **double-buffering (or multi-buffering)** approach, where the CPU can begin updating resources for frame *n+1* while the GPU is still consuming resources for frame *n*. In Vulkan, this technique is commonly referred to as **frames in flight**.
+
+I integrated this pattern into the project to improve parallelism between the CPU and GPU, reducing stalls and achieving smoother frame pacing.
+
 ### Reference-Counted Vulkan Object Management
 
 Because Vulkan objects must be destroyed manually and in a specific order, I designed a reference-counted wrapper that automatically manages object lifetimes.
