@@ -51,7 +51,7 @@ completed_row:
 inprogress_row:
   - image_path: /assets/images/vrez_rt/cover.png
     title: "VRez-RT"
-    excerpt: "A **Vulkan** real-time Ray Tracer."
+    excerpt: "A **Vulkan** real-time ray tracing and game engine."
     url: "/in_progress/vrez_rt/"
     btn_label: "Read More"
     btn_class: "btn--success"

@@ -5,7 +5,7 @@ toc: true
 classes: wide
 permalink: /in_progress/vrez_rt/
 title: "VRez-RT"
-excerpt: "A **Vulkan** real-time Ray Tracer."
+excerpt: "A **Vulkan** real-time ray tracing and game engine."
 
 header:
   teaser: /assets/images/vrez_rt/cover.png 
@@ -20,11 +20,11 @@ header:
 # Optional info block (not a built-in MM sidebar component—just data you can render manually if you want)
 sidebar:
   - title: "Type"
-    text: "3D Real-time Ray Tracer"
+    text: "3D Game Engine"
   - title: "Programming Language"
     text: "C++"
   - title: "Highlight"
-    text: "Vulkan; Ray Tracing"
+    text: "Vulkan; Ray Tracing; Game Engine"
   - title: "Team"
     text: "Solo"
 
@@ -34,12 +34,69 @@ sidebar:
 **This project is still in progress**
 {: .notice--success}
 
-## Workflow
+**VRez-RT** started as a real-time ray tracing renderer. After reading  
+[*Game Engine Architecture*](https://www.gameenginebook.com/), the scope expanded significantly.
+
+This project is now both:
+- A major upgrade to [VRez](/completed_projects/vrez/)
+- A foundation for a full-featured game engine
+
+The goal is to integrate a modern **PBR** rendering pipeline alongside hardware-accelerated ray tracing**, and use this unified rendering system as the core of the engine.
+
+## Rasterization
+
+The rasterization path is based on the deferred and forward **PBR rendering pipeline** previously implemented in [VRez](/completed_projects/vrez/).
+
+## Ray Tracing (WIP)
+
+### Workflow
 
 Below is a brief workflow (subject to updates).
 
 ![Workflow](/assets/images/vrez_rt/workflow.png)
 
+## Levle / Scene System (WIP)
+
+Similar to Unity and Unreal, a *Level* (or *Scene*) represents the primary workspace where game objects are placed to construct the game world. This includes:
+
+- Geometry
+- Lighting
+- Environment data
+- Global scene parameters
+
+Scene data is stored in a **JSON file** and loaded at runtime.
+
+Below is a simplified scene resource structure (subject to updates):
+
+```cpp
+struct SceneResource {
+    std::vector<VulkanObject> instances;
+    std::vector<ObjDesc>      objDescs;
+
+    SceneGlobals globals;
+
+    // GPU buffers for scene data
+    VulkanBuffer objBuffer;
+    VulkanBuffer cameraBuffer;
+
+    SceneResource() = default;
+    SceneResource(VulkanState& state, const SceneConfig& config);
+
+    ......
+};
+```
+
+## Physics (TODO)
+Planned integration of **NVIDIA PhysX** for:
+- Rigid body simulation
+- Collision detection
+- Physics queries 
+
+## Scripting (TODO)
+Planned support for Lua scripting to enable:
+- Gameplay logic
+- Rapid iteration
+- Tool-side customization
 ## Improvement
 
 Here are some improvements compared to [VRez](/completed_projects/vrez/).
