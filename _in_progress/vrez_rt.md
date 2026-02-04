@@ -41,7 +41,7 @@ This project is now both:
 - A major upgrade to [VRez](/completed_projects/vrez/)
 - A foundation for a full-featured game engine
 
-The goal is to integrate a modern **PBR** rendering pipeline alongside hardware-accelerated ray tracing**, and use this unified rendering system as the core of the engine.
+The goal is to integrate a modern **PBR** rendering pipeline alongside hardware-accelerated **ray tracing**, and use this unified rendering system as the core of the engine.
 
 ## Rasterization
 
@@ -97,6 +97,7 @@ Planned support for Lua scripting to enable:
 - Gameplay logic
 - Rapid iteration
 - Tool-side customization
+
 ## Improvement
 
 Here are some improvements compared to [VRez](/completed_projects/vrez/).
