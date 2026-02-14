@@ -47,6 +47,34 @@ The goal is to integrate a modern **PBR** rendering pipeline alongside hardware-
 
 The rasterization path is based on the deferred and forward **PBR rendering pipeline** previously implemented in [VRez](/completed_projects/vrez/).
 
+### Data Oriented Design (WIP)
+
+While object-oriented design (OOD) is still widely used, modern game and rendering engines increasingly adopt **data-oriented design (DOD)** along with **bindless descriptors** to reduce CPU overhead. This becomes especially important when thousands of entities in a scene require rendering (or even frequent logic updates). As a result, I transitioned from a traditional OOD structure to a more data-driven workflow.
+
+To improve flexibility when moving resources in memory, I also represent meshes, materials, and other assets using lightweight handles (a simple ``uint32_t`` for now) rather than raw pointers.
+
+
+Below is a simplified structure of the render system：
+
+``` c++
+class SceneRenderer{
+public:
+    void Render()
+
+private:
+    std::vector<glm::mat4> m_entityTransforms{};
+    std::vector<MeshHandle> m_entityMeshes{};
+    std::vector<MaterialHandle> m_entityMaterials{};
+
+......
+}
+
+```
+
+Instead of calling ``entity->Draw()`` for every object, the renderer groups and sorts entities based on their mesh data, then issues batched ``vkCmdDrawIndexed`` calls. Materials are uploaded as an array at the beginning of the render pass, and push constants are used to pass the index of the active texture into the shader. This approach reduces cache misses and minimizes expensive draw and binding operations, resulting in improved rendering performance.
+
+This design is still evolving as implementation details are refined, but the same data-oriented pattern will also be extended to other engine systems in the future.
+
 ## Ray Tracing (WIP)
 
 ### Workflow
@@ -55,36 +83,7 @@ Below is a brief workflow (subject to updates).
 
 ![Workflow](/assets/images/vrez_rt/workflow.png)
 
-## Levle / Scene System (WIP)
 
-Similar to Unity and Unreal, a *Level* (or *Scene*) represents the primary workspace where game objects are placed to construct the game world. This includes:
-
-- Geometry
-- Lighting
-- Environment data
-- Global scene parameters
-
-Scene data is stored in a **JSON file** and loaded at runtime.
-
-Below is a simplified scene resource structure (subject to updates):
-
-```cpp
-struct SceneResource {
-    std::vector<VulkanObject> instances;
-    std::vector<ObjDesc>      objDescs;
-
-    SceneGlobals globals;
-
-    // GPU buffers for scene data
-    VulkanBuffer objBuffer;
-    VulkanBuffer cameraBuffer;
-
-    SceneResource() = default;
-    SceneResource(VulkanState& state, const SceneConfig& config);
-
-    ......
-};
-```
 
 ## Physics (TODO)
 Planned integration of **NVIDIA PhysX** for:

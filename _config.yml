@@ -43,7 +43,7 @@ include:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# Plugins (previously gems:)
+# Plugins (previously Recognition of on-line handwrittengems:)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
