@@ -211,47 +211,6 @@ private:
 
 ```
 
-### More Compatible Thread Wrapper
-
-Since some toolchains (e.g., Clang) don’t support std::jthread, I added a small wrapper for better portability.
-
-```cpp
-#pragma once
-
-#include <thread>
-
-// MSVC
-#if defined(_cpp_lib_jthread) && (__cpp_lib_jthread >= 201911L)
-    using Thread = std::jthread;
-
-// CLANG
-#else
-class Thread {
-public:
-    Thread() noexcept = default;
-    Thread(const Thread&) = delete;
-    Thread& operator=(const Thread&) = delete;
-
-    Thread(Thread&&) = default;
-    Thread& operator=(Thread&&) = default;
-
-    template <class F, class... Args>
-    explicit Thread(F&& f, Args&&... args) : m_thread(std::forward<F>(f), std::forward<Args>(args)...) {}
-
-    ~Thread() {
-        if (m_thread.joinable()) {
-            m_thread.join();
-        }
-    }
-
-
-private:
-    std::thread m_thread;
-};
-#endif
-
-```
-
 ### Better Logging
 
 I integrated [spdlog](https://github.com/gabime/spdlog) for structured logs with timestamps and levels, replacing SDL_Log.
