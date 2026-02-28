@@ -101,6 +101,13 @@ Planned support for Lua scripting to enable:
 
 Here are some improvements compared to [VRez](/completed_projects/vrez/).
 
+### GLTF and Scene Resource
+Instead of using `obj` format for meshes, I switch to use `gltf`, which provides a more compact file format and built-in support for PBR materials. 
+
+Below is the resource management between `gltf` files and sence resource. The system is designed to support the **DOD** architecture (subject to updates).
+
+![Gltf Scene Resource](/assets/images/vrez_rt/gltf_scene.png)
+
 ### Frames In Flight
 [VRez](/completed_projects/vrez/) only uses a single frame of rendering context and relies on strict CPU–GPU synchronization. As a result, the CPU often has to stall while waiting for the GPU to finish processing the current frame before it can begin preparing the next one. This can significantly reduce overall throughput and introduce unnecessary idle time.
 
