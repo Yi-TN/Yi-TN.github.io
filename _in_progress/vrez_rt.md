@@ -28,11 +28,11 @@ sidebar:
   - title: "Team"
     text: "Solo"
 
-gltf:
+render_graph:
   - url: /assets/images/vrez_rt/rendre_graph.png
     image_path: /assets/images/vrez_rt/rendre_graph.png
 
-render_graph:
+gltf:
   - url: /assets/images/vrez_rt/gltf_scene.png
     image_path: /assets/images/vrez_rt/gltf_scene.png
 
