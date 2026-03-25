@@ -28,6 +28,14 @@ sidebar:
   - title: "Team"
     text: "Solo"
 
+gltf:
+  - url: /assets/images/vrez_rt/gltf_scene.png
+    image_path: /assets/images/vrez_rt/gltf_scene.png
+
+render_graph:
+  - url: /assets/images/vrez_rt/gltf_scene.png
+    image_path: /assets/images/vrez_rt/gltf_scene.png
+
 ---
 
 {% include feature_row %}
@@ -101,12 +109,64 @@ Planned support for Lua scripting to enable:
 
 Here are some improvements compared to [VRez](/completed_projects/vrez/).
 
+### Render Graph
+A render graph is a commonly used design pattern in modern game engines for organizing render passes, optimizing execution order, and automatically handling resource synchronization (e.g., barriers between passes).
+
+For VRez-RT, I opted for a streamlined implementation. Our Render Graph is a **Directed Acyclic Graph (DAG)** where nodes represent **Render Passes** and edges represent **Resource Dependencies** (specifically, write-to-read operations).
+
+To keep the system lightweighted, I made a few deliberate design:
+
+- **Simplified Dependency Tracking:** I omit globally static resources (such as vertex buffers or bindless texture descriptors) from the graph tracking, as these are rarely written to during the frame.
+- **Callback Driven Execution:** Actual Vulkan commands are recorded via lambdas, keeping the graph logic agnostic of specific rendering techniques.
+- **String Key Lookup**: Both resources and passes are identified by readable names for easier debugging and configuration.
+
+Below is the workflow of the render graph, following a strict lifecycle from a setup to execution phases:
+
+- **Add Resources:** Declare images and buffers used within the graph. 
+- **Set Final Resource:** Define the "Leaf Node" (e.g., the final rendered image) to allow the graph to prune unused passes.
+- **Add Render Passes:** Specify the pipeline stage and the specific access masks for each resource.
+- **Bind Callbacks:** Assign the C++ lambdas containing the actual draw/dispatch commands.
+- **Output Callback:** Set a specialized lambda to handle the final resource (e.g. transitioning the layout of the result image so that it can be blitted to the Swapchain).
+- **Build Graph:** Perform a DFS traversal to resolve execution order and inject automated barriers.
+- **Execute:** Record the pre-calculated barriers and pass callbacks into the command buffer every frame.
+
+{% include gallery id="render_graph" caption="Render Graph Workflow" %}
+
+``` cpp
+void RenderGraph::TraversePassDfs(uint32_t passIndex, std::unordered_set<uint32_t> &visited, std::unordered_set<uint32_t> &visiting) {
+    if (visited.contains(passIndex)) {
+        return;
+    }
+
+    DebugCheckCritical(!visiting.contains(passIndex), "Render graph circle detected at pass {}", m_passes[passIndex].GetName());
+    visiting.emplace(passIndex);
+
+    for (const auto &access: m_passResourceAccesses[passIndex]) {
+        RenderResource::ResourceOperation operation = GetRenderOperation(access.access);
+        if (operation == RenderResource::ResourceOperation::eReadOnly || operation == RenderResource::ResourceOperation::eReadWrite) {
+            const RenderResource                  &resource = m_resources[access.resourceIndex];
+            const RenderResource::ResourceVersion &version  = resource.GetResourceVersion(access.versionIndex);
+
+            uint32_t writer = version.writerPass;
+            if (writer != render_utils::kUnused) {
+                TraversePassDfs(writer, visited, visiting);
+            }
+        }
+    }
+
+    visiting.erase(passIndex);
+    visited.emplace(passIndex);
+
+    m_executionOrder.push_back(passIndex);
+}
+```
+
 ### GLTF and Scene Resource
 Instead of using `obj` format for meshes, I switch to use `gltf`, which provides a more compact file format and built-in support for PBR materials. 
 
 Below is the resource management between `gltf` files and sence resource. The system is designed to support the **DOD** architecture (subject to updates).
 
-![Gltf Scene Resource](/assets/images/vrez_rt/gltf_scene.png)
+{% include gallery id="gltf" caption="GLTF and Scene Resources Management" %}
 
 ### Frames In Flight
 [VRez](/completed_projects/vrez/) only uses a single frame of rendering context and relies on strict CPU–GPU synchronization. As a result, the CPU often has to stall while waiting for the GPU to finish processing the current frame before it can begin preparing the next one. This can significantly reduce overall throughput and introduce unnecessary idle time.
