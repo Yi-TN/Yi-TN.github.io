@@ -55,7 +55,7 @@ The goal is to integrate a modern **PBR** rendering pipeline alongside hardware-
 
 The rasterization path is based on the deferred and forward **PBR rendering pipeline** previously implemented in [VRez](/completed_projects/vrez/).
 
-### Data Oriented Design (WIP)
+### Data Oriented Design 
 
 While object-oriented design (OOD) is still widely used, modern game and rendering engines increasingly adopt **data-oriented design (DOD)** along with **bindless descriptors** to reduce CPU overhead. This becomes especially important when thousands of entities in a scene require rendering (or even frequent logic updates). As a result, I transitioned from a traditional OOD structure to a more data-driven workflow.
 
@@ -87,12 +87,23 @@ This design is still evolving as implementation details are refined, but the sam
 
 ### Workflow
 
-Below is a brief workflow (subject to updates).
+*Subject to updates*
 
-![Workflow](/assets/images/vrez_rt/workflow.png)
+The goal is to implement effects such as soft shadows and ambient occlusion using hardware-accelerated ray tracing.
 
+<!-- Below is a brief workflow (subject to updates).
 
+![Workflow](/assets/images/vrez_rt/workflow.png) -->
 
+### Soft Shadows
+Traditional shadow mapping often suffers from artifacts such as shadow acne and Peter-Panning. While techniques like PCF can soften the edges, the result still lacks realism. To address this, I use a compute shader to trace rays toward the light source and produce physically-based soft shadows, as shown below. Denoising is still a work in progress.
+
+![Soft Shadow](/assets/images/vrez_rt/rt_shadow.png)
+
+### Denoising (WIP)
+Ray traced results are inherently noisy, especially when only a few rays per pixel are used for real-time performance. To address this, I am implementing [Spatiotemporal Variance-Guided Filtering (SVGF)](https://research.nvidia.com/publication/2017-07_spatiotemporal-variance-guided-filtering-real-time-reconstruction-path-traced).
+
+The denoiser will be applied to ray traced outputs such as the soft shadows above.
 ## Physics (TODO)
 Planned integration of **NVIDIA PhysX** for:
 - Rigid body simulation
