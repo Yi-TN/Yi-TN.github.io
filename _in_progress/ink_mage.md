@@ -31,8 +31,8 @@ sidebar:
 screenshots:
   - url: /assets/images/ink_mage/drawing.PNG
     image_path: /assets/images/ink_mage/drawing.PNG
-  - url: /assets/images/ink_mage/cover.PNG
-    image_path: /assets/images/ink_mage/cover.PNG
+  - url: /assets/images/ink_mage/cover.png
+    image_path: /assets/images/ink_mage/cover.png
   - url: /assets/images/ink_mage/empty.PNG
     image_path: /assets/images/ink_mage/empty.PNG
   - url: /assets/images/ink_mage/GameOver.PNG
