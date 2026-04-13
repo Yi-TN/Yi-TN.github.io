@@ -8,7 +8,7 @@ title: "Ink Mage"
 excerpt: "An online turn-based game."
 
 header:
-  teaser: /assets/images/ink_mage/cover.png 
+  teaser: /assets/images/ink_mage/cover.PNG 
   overlay_color: "#000"
   overlay_filter: 0.7
   overlay_image: /assets/images/ink_mage/banner.png
@@ -29,14 +29,14 @@ sidebar:
     text: "2 Developers"
 
 screenshots:
-  - url: /assets/images/ink_mage/drawing.png
-    image_path: /assets/images/ink_mage/drawing.png
-  - url: /assets/images/ink_mage/cover.png
-    image_path: /assets/images/ink_mage/cover.png
-  - url: /assets/images/ink_mage/empty.png
-    image_path: /assets/images/ink_mage/empty.png
-  - url: /assets/images/ink_mage/GameOver.png
-    image_path: /assets/images/ink_mage/GameOver.png
+  - url: /assets/images/ink_mage/drawing.PNG
+    image_path: /assets/images/ink_mage/drawing.PNG
+  - url: /assets/images/ink_mage/cover.PNG
+    image_path: /assets/images/ink_mage/cover.PNG
+  - url: /assets/images/ink_mage/empty.PNG
+    image_path: /assets/images/ink_mage/empty.PNG
+  - url: /assets/images/ink_mage/GameOver.PNG
+    image_path: /assets/images/ink_mage/GameOver.PNG
 
 ---
 
