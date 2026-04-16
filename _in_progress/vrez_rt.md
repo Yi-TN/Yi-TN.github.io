@@ -36,6 +36,17 @@ gltf:
   - url: /assets/images/vrez_rt/gltf_scene.png
     image_path: /assets/images/vrez_rt/gltf_scene.png
 
+soft_shadow:
+  - url: /assets/images/vrez_rt/raw_shadow.png
+    image_path: /assets/images/vrez_rt/raw_shadow.png
+    title: "Raw Ray-Traced Shadow"
+  - url: /assets/images/vrez_rt/denoising_shadow.png
+    image_path: /assets/images/vrez_rt/denoising_shadow.png
+    title: "Shadow After Applying SVGF"
+  - url: /assets/images/vrez_rt/rt_shadow.png
+    image_path: /assets/images/vrez_rt/rt_shadow.png
+    title: "Soft Shadow with Rasterized Scene"
+
 ---
 
 {% include feature_row %}
@@ -95,15 +106,16 @@ The goal is to implement effects such as soft shadows and ambient occlusion usin
 
 ![Workflow](/assets/images/vrez_rt/workflow.png) -->
 
+### Denoising
+Ray traced results are inherently noisy, especially when only a few rays per pixel are used for real-time performance. To address this, I implemented [Spatiotemporal Variance-Guided Filtering (SVGF)](https://research.nvidia.com/publication/2017-07_spatiotemporal-variance-guided-filtering-real-time-reconstruction-path-traced), which is applied to ray traced outputs such as the soft shadows below.
+
 ### Soft Shadows
-Traditional shadow mapping often suffers from artifacts such as shadow acne and Peter-Panning. While techniques like PCF can soften the edges, the result still lacks realism. To address this, I use a compute shader to trace rays toward the light source and produce physically-based soft shadows, as shown below. Denoising is still a work in progress.
+Traditional shadow mapping often suffers from artifacts such as shadow acne and Peter-Panning. While techniques like PCF can soften the edges, the result still lacks realism (see examples in [VRez](/completed_projects/vrez/)). To address this, I use a compute shader to trace rays toward the light source and produce physically-based soft shadows.
 
-![Soft Shadow](/assets/images/vrez_rt/rt_shadow.png)
+I first sample blue noise points within a disk that represents the directional light to generate the raw ray traced shadow, then apply SVGF to smooth the result.
 
-### Denoising (WIP)
-Ray traced results are inherently noisy, especially when only a few rays per pixel are used for real-time performance. To address this, I am implementing [Spatiotemporal Variance-Guided Filtering (SVGF)](https://research.nvidia.com/publication/2017-07_spatiotemporal-variance-guided-filtering-real-time-reconstruction-path-traced).
+{% include gallery id="soft_shadow" caption="Soft Shadow" %}
 
-The denoiser will be applied to ray traced outputs such as the soft shadows above.
 ## Physics (TODO)
 Planned integration of **NVIDIA PhysX** for:
 - Rigid body simulation
@@ -297,3 +309,11 @@ I integrated [spdlog](https://github.com/gabime/spdlog) for structured logs with
 
 ### Better Shader Lanaguage
 I migrated the project to use [Slang](https://github.com/shader-slang/slang), a modern shader language with a more expressive and ergonomic design. Compared to GLSL, Slang offers improved usability, better abstraction support, and a cleaner workflow for cross-platform shader development.
+
+## References
+- [Using Blue Noise For Raytraced Soft Shadows](https://blog.demofox.org/2020/05/16/using-blue-noise-for-raytraced-soft-shadows/)
+- [Adventures in Hybrid Rendering](https://diharaw.github.io/post/adventures_in_hybrid_rendering/)
+- [Render graphs and Vulkan — a deep dive](https://themaister.net/blog/2017/08/15/render-graphs-and-vulkan-a-deep-dive/)
+- [Rendergraphs and how to implement one](https://poniesandlight.co.uk/reflect/island_rendergraph_1/)
+- [Spatiotemporal Variance-Guided Filtering: Real-Time Reconstruction for Path-Traced Global Illumination](https://research.nvidia.com/publication/2017-07_spatiotemporal-variance-guided-filtering-real-time-reconstruction-path-traced)
+- [A Low-Discrepancy Sampler that Distributes Monte Carlo Errors as a Blue Noise in Screen Space](https://belcour.github.io/blog/slides/2019-sampling-bluenoise/index.html)
