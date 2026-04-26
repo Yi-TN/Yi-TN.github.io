@@ -41,10 +41,10 @@ completed_row:
     url: "/completed_projects/maihime"
     btn_label: "Read More"
     btn_class: "btn--success"
-  - image_path: /assets/images/toybox/1.webp
-    title: "Toy Box (2022)"
-    excerpt: "Toy Box is a cute and playful mod with 500+ cheats, tweaks and quality of life improvements for Pathfinder: WoTR."
-    url: "/completed_projects/toybox"
+  - image_path: /assets/images/ntc/ntc.png
+    title: "Neural Texture Compression (2026)"
+    excerpt: "A neural texture compression and rendering experiment."
+    url: "/completed_projects/ntc"
     btn_label: "Read More"
     btn_class: "btn--success"
 

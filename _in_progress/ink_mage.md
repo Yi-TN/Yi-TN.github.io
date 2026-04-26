@@ -8,7 +8,7 @@ title: "Ink Mage"
 excerpt: "An online turn-based game."
 
 header:
-  teaser: /assets/images/ink_mage/cover.PNG 
+  teaser: /assets/images/ink_mage/cover.png 
   overlay_color: "#000"
   overlay_filter: 0.7
   overlay_image: /assets/images/ink_mage/banner.png
