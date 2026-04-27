@@ -82,14 +82,7 @@ The decoder is a 2-hidden-layer MLP. Per pixel its input is:
 The hidden width is **64**, the output is **15** channels with no output activation. Hidden layers use **HardGELU**, the
 paper's cheap inference-time GELU approximation:
 
-$$
-\mathrm{HardGELU}(x) =
-\begin{cases}
-0 & x < -1.5 \\
-\tfrac{x}{3}\,(x + 1.5) & -1.5 \le x \le 1.5 \\
-x & x > 1.5
-\end{cases}
-$$
+![HardGELU](/assets/images/ntc/hardGELU.png)
 
 The positional encoding is the paper's **tiled triangular wave**: a periodic pattern that repeats every 8 texels at the
 highest mip with frequencies 1, 2, 4. Triangle waves are used in place of `sin`/`cos` so the encoding maps to a handful
