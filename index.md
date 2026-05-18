@@ -31,20 +31,22 @@ excerpt: "Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm curre
 completed_row:
   - image_path: /assets/images/vrez/2.png
     title: "VRez Renderer (2025)"
-    excerpt: "A **Vulkan** Real-Time Renderer, with **Physical Based Rendering**, **Image Based Lighting**,**Forward + Deferred Pipelines**, **Shadow Map**, and **FXAA**."
+    excerpt: "A Vulkan Real-Time Renderer."
     url: "/completed_projects/vrez"
     btn_label: "Read More"
     btn_class: "btn--success"
-  - image_path: /assets/images/maihime/cover.png
-    title: "Fuuka Student Council (2025)"
-    excerpt: "An idle fan game inspired by Mai-HiME."
-    url: "/completed_projects/maihime"
-    btn_label: "Read More"
-    btn_class: "btn--success"
+  
   - image_path: /assets/images/ntc/ntc.png
     title: "Neural Texture Compression (2026)"
     excerpt: "A neural texture compression and rendering experiment."
     url: "/completed_projects/ntc"
+    btn_label: "Read More"
+    btn_class: "btn--success"
+
+  - image_path: /assets/images/drez/cover.png
+    title: "DRez Renderer (2026)"
+    excerpt: "A DirectX 12 Real-Time Renderer."
+    url: "/completed_projects/drez"
     btn_label: "Read More"
     btn_class: "btn--success"
 

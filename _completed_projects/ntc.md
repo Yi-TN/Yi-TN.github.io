@@ -31,6 +31,9 @@ sidebar:
     text: "April 2025"
 
 ---
+
+{% include feature_row %}
+
 A neural texture compression and rendering experiment: an MLP is trained offline in PyTorch to compress PBR material
 textures into a compact latent representation, then reconstructed at runtime in a
 Vulkan + [Slang](https://github.com/shader-slang/slang) renderer using cooperative vector / cooperative matrix

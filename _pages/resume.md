@@ -11,7 +11,7 @@ toc: false
 | Category | 
 |---|---|
 | **Programming Languages** | C++, C, C#, Python, GLSL, HLSL, Slang, Unreal Blueprints |
-| **Graphics APIs** | Vulkan, OpenGL |
+| **Graphics APIs** | Vulkan, OpenGL, DirectX 12 |
 | **Debugging/Profiling Tools** | RenderDoc, ImGui, Nsight Graphics |
 | **Game Engines** | Unreal Engine 5, Unity |
 | **Art Tools** | Blender, Clip Studio Paint, Photoshop, Aseprite, After Effects, Premiere Pro |
