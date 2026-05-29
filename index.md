@@ -29,10 +29,10 @@ excerpt: "Hi, I'm Yuzhe Yi, a <b>Game Graphics/Rendering Engineer</b>. I'm curre
 
 
 completed_row:
-  - image_path: /assets/images/vrez/2.png
-    title: "VRez Renderer (2025)"
-    excerpt: "A Vulkan Real-Time Renderer."
-    url: "/completed_projects/vrez"
+  - image_path: /assets/images/grass/cover.jpg
+    title: "Procedural Grass (2026)"
+    excerpt: "A GPU-driven procedural grass renderer plug-in for Unreal Engine 5."
+    url: "/completed_projects/grass"
     btn_label: "Read More"
     btn_class: "btn--success"
   
