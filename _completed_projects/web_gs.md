@@ -192,7 +192,9 @@ all four radix passes, since the profiler accumulates per label per frame.
         style="width:100%;aspect-ratio:16/9;border:1px solid #444;border-radius:6px"
         allowfullscreen></iframe>
 
-> Requires a WebGPU browser (Chrome/Edge 113+, or Safari 26+). Drag a `.ply` onto the canvas to load your own model.
+{% include feature_row %}
+Requires a WebGPU browser (Chrome/Edge 113+, or Safari 26+). Drag a `.ply` onto the canvas to load your own model.
+{: .notice--success}
 
 
 ## Models
