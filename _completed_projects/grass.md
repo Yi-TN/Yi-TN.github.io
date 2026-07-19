@@ -177,5 +177,3 @@ Frame rate stays stable at 60 FPS, and the grass passes cost only a fraction of 
 
 - [Procedural Grass in *Ghost of Tsushima*](https://www.youtube.com/watch?v=Ibe1JBF5i5Y&t)
 - [Prospecting for Hash Functions](https://nullprogram.com/blog/2018/07/31/)
-</content>
-</invoke>
