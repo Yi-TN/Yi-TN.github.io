@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WebGPU Gaussian Splatter Renderer</title>
-  <script type="module" crossorigin src="./assets/index-D1OAN0vB.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B_Eges9I.css">
+    <title>WebGPU Gaussian Splatting Renderer</title>
+  <script type="module" crossorigin src="/assets/index-DHE9d4lC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CvVO8u8F.css">
 </head>
 <body>
 <canvas id="gpu-canvas"></canvas>
+<div id="loading">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading…</div>
+</div>
+<div id="dropzone" class="hidden">
+    <div class="dropzone-card">
+        <div class="dropzone-title">Drop a Gaussian Splatting <code>.ply</code> file</div>
+        <div class="dropzone-hint">drag it anywhere on this page</div>
+        <button id="dropzone-browse" type="button">Browse…</button>
+    </div>
+</div>
 </body>
 </html>
