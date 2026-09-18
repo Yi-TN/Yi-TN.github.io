@@ -10,7 +10,7 @@ toc: false
 
 | Category | 
 |---|---|
-| **Programming Languages** | C++, C, C#, Python, Javascript, GLSL, HLSL, Slang, WGSL,Unreal Blueprints |
+| **Programming Languages** | C++, C, C#, Python, GLSL, HLSL, Slang, Unreal Blueprints, JavaScript, WGSL |
 | **APIs** | Vulkan, OpenGL, DirectX 12, WebGPU, CUDA |
 | **Debugging/Profiling Tools** | RenderDoc, ImGui, Nsight Graphics |
 | **Game Engines** | Unreal Engine 5, Unity |
