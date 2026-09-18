@@ -14,7 +14,7 @@ header:
   overlay_image: /assets/images/ink_mage/banner.png
   actions:
     - label: "Itch.io"
-      url: "https://github.com/KoS-Y1/VRez"
+      url: "https://derek-frevel.itch.io/ink-mage"
 #   caption: "Screenshot of my project VRez"
 
 # Optional info block (not a built-in MM sidebar component—just data you can render manually if you want)

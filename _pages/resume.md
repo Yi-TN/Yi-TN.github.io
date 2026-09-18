@@ -10,13 +10,13 @@ toc: false
 
 | Category | 
 |---|---|
-| **Programming Languages** | C++, C, C#, Python, GLSL, HLSL, Slang, Unreal Blueprints |
-| **Graphics APIs** | Vulkan, OpenGL, DirectX 12 |
+| **Programming Languages** | C++, C, C#, Python, Javascript, GLSL, HLSL, Slang, WGSL,Unreal Blueprints |
+| **APIs** | Vulkan, OpenGL, DirectX 12, WebGPU, CUDA |
 | **Debugging/Profiling Tools** | RenderDoc, ImGui, Nsight Graphics |
 | **Game Engines** | Unreal Engine 5, Unity |
 | **Art Tools** | Blender, Clip Studio Paint, Photoshop, Aseprite, After Effects, Premiere Pro |
 | **Team Skills** | Git (GitHub Pull Request workflow), Agile (Scrum), Jira |
-  **Other Tools** | CMake, Qt, Visual Studio, Rider, CLion |
+  **Other Tools** | CMake, Qt |
 
 ## Work Experience
 ### Software Verification Engineer
