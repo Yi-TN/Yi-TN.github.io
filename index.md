@@ -63,10 +63,10 @@ inprogress_row:
     url: "/in_progress/paint/"
     btn_label: "Read More"
     btn_class: "btn--success" 
-  - image_path: /assets/images/ink_mage/cover.png
-    title: "Ink Mage"
-    excerpt: "An online turned-base game."
-    url: "/in_progress/ink_mage/"
+  - image_path: /assets/images/ezmerch/icon.png
+    title: "EzMerch"
+    excerpt: "A desktop artwork preparation tool."
+    url: "/in_progress/ezmerch/"
     btn_label: "Read More"
     btn_class: "btn--success"
 
