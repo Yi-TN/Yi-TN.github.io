@@ -8,7 +8,7 @@ title: "EzMerch"
 excerpt: "A desktop artwork preparation tool."
 
 header:
-  teaser: /assets/images/ezmerch/icon.png
+  teaser: /assets/images/ezmerch/cover.svg
   overlay_color: "#000"
   overlay_filter: 0.4
   overlay_image: /assets/images/ezmerch/banner.svg

@@ -63,7 +63,7 @@ inprogress_row:
     url: "/in_progress/paint/"
     btn_label: "Read More"
     btn_class: "btn--success" 
-  - image_path: /assets/images/ezmerch/icon.png
+  - image_path: /assets/images/ezmerch/cover.svg
     title: "EzMerch"
     excerpt: "A desktop artwork preparation tool."
     url: "/in_progress/ezmerch/"
